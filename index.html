@@ -12,7 +12,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span class="logo-text">elementalsouls</span>
+                <span class="logo-text">⚡ Sachin Sharma</span>
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
@@ -43,21 +43,28 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
+                <div class="hero-badge">
+                    Cybersecurity Professional
+                </div>
                 <h1 class="hero-title">
-                    The intelligent cybersecurity professional.
+                    Hi, I'm <span class="gradient-text">Sachin Sharma</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Become a command line power user on day one. I combine AI and your dev team's knowledge in one fast, intuitive security terminal.
+                    A passionate cybersecurity expert with 4+ years of experience in penetration testing, vulnerability assessments, and red team operations. I help organizations strengthen their security posture and protect against evolving cyber threats.
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-download"></i>
-                        Contact Me
+                        <i class="fas fa-rocket"></i>
+                        Let's Connect
+                    </a>
+                    <a href="#about" class="btn btn-secondary">
+                        <i class="fas fa-user"></i>
+                        About Me
                     </a>
                 </div>
                 <div class="terminal-command">
                     <span class="prompt">$</span>
-                    <span class="command">wget install elementalsouls.security</span>
+                    <span class="command">whoami && echo "elementalsouls - Penetration Tester"</span>
                 </div>
             </div>
             <div class="hero-visual">
@@ -103,47 +110,37 @@
                             <span class="terminal-muted">(007s)</span>
                         </div>
                         <div class="terminal-line">
-                            <span class="terminal-cmd">git checkout eng-2931-update-post-handler</span>
+                            <span class="terminal-cmd">nmap -sS -sV target.htb</span>
                         </div>
                         <div class="terminal-line">
-                            <span class="terminal-output">Switched to branch 'eng-2931-update-post-handler'</span>
+                            <span class="terminal-output">Starting Nmap 7.94 ( https://nmap.org )</span>
                         </div>
                         <div class="terminal-line">
-                            <span class="terminal-output">Your branch is up to date with 'origin/eng-2931-update-post-handler'</span>
+                            <span class="terminal-output">Nmap scan report for target.htb (192.168.1.100)</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">Host is up (0.00085s latency).</span>
+                        </div>
+                        <div class="terminal-line"></div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">PORT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATE&nbsp;&nbsp;SERVICE&nbsp;&nbsp;&nbsp;VERSION</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">22/tcp&nbsp;&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;ssh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenSSH 8.2p1</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">80/tcp&nbsp;&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;http&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apache 2.4.41</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">443/tcp&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;ssl/http&nbsp;&nbsp;&nbsp;Apache 2.4.41</span>
                         </div>
                         <div class="terminal-line"></div>
                         <div class="terminal-line">
                             <span class="terminal-prompt">~/work-env/security-internal</span>
-                            <span class="terminal-git">git:(eng-2931-update-post-handler)</span>
-                            <span class="terminal-muted">(007s)</span>
+                            <span class="terminal-git">git:(main)</span>
                         </div>
                         <div class="terminal-line">
-                            <span class="terminal-cmd">./scripts/deploy --env staging</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">Deploying application to the staging environment...</span>
-                        </div>
-                        <div class="terminal-line"></div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">Starting deployment...</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">Target environment: staging</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">Updating service [warp-server]...</span>
-                        </div>
-                        <div class="terminal-line"></div>
-                        <div class="terminal-line">
-                            <span class="terminal-success">Service [warp-server] successfully deployed.</span>
-                        </div>
-                        <div class="terminal-line"></div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">~/work-env/security-internal</span>
-                            <span class="terminal-git">git:(eng-2931-update-post-handler)</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-cmd">nmap -sS target.htb<span class="terminal-cursor"></span></span>
+                            <span class="terminal-cmd">msfconsole<span class="terminal-cursor"></span></span>
                         </div>
                     </div>
                 </div>
@@ -154,7 +151,7 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
             <p class="section-subtitle">
                 Cybersecurity professional with expertise in penetration testing, vulnerability assessments, and security consulting
             </p>
@@ -165,7 +162,8 @@
                         <h3>Professional Summary</h3>
                         <p style="color: var(--text-secondary); margin: 16px 0; line-height: 1.6;">
                             I am a dedicated cybersecurity professional with extensive experience in vulnerability assessments, 
-                            penetration testing, and security consulting. Currently working as a Security Analyst at Indian Cyber Institute (ICI), 
+                            penetration testing, and security consulting. Currently working as an Assistant Manager at Grant Thornton LLP,
+                            I have successfully led numerous red team operations and security assessments for high-profile clients, 
                             I specialize in providing cybersecurity consulting services to strengthen frameworks for SMEs.
                         </p>
                         <p style="color: var(--text-secondary); line-height: 1.6;">
@@ -176,7 +174,7 @@
                     
                     <div class="stats">
                         <div class="stat">
-                            <span class="stat-number">3+</span>
+                            <span class="stat-number">4+</span>
                             <span class="stat-label">Years Experience</span>
                         </div>
                         <div class="stat">
@@ -184,7 +182,7 @@
                             <span class="stat-label">Security Projects</span>
                         </div>
                         <div class="stat">
-                            <span class="stat-number">99%</span>
+                            <span class="stat-number">97%</span>
                             <span class="stat-label">Client Satisfaction</span>
                         </div>
                     </div>
@@ -202,23 +200,23 @@
                         <h4 style="color: var(--text-primary); margin: 24px 0 16px 0;">Certifications</h4>
                         <div style="display: flex; flex-direction: column; gap: 12px;">
                             <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--terminal-error);"></i>
+                                <i class="fas fa-certificate" style="color: var(--primary-green);"></i>
                                 <span style="color: var(--text-secondary);">Offensive Security Certified Professional (OSCP)</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--terminal-error);"></i>
+                                <i class="fas fa-certificate" style="color: var(--primary-green);"></i>
                                 <span style="color: var(--text-secondary);">Certified Ethical Hacker (CEH)</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--terminal-error);"></i>
+                                <i class="fas fa-certificate" style="color: var(--primary-green);"></i>
                                 <span style="color: var(--text-secondary);">TCM Security - Movement, Pivoting and Persistence</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--terminal-error);"></i>
+                                <i class="fas fa-certificate" style="color: var(--primary-green);"></i>
                                 <span style="color: var(--text-secondary);">Offensive Approach to Hunt Bugs</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--terminal-error);"></i>
+                                <i class="fas fa-certificate" style="color: var(--primary-green);"></i>
                                 <span style="color: var(--text-secondary);">Windows Privilege Escalation</span>
                             </div>
                         </div>
@@ -229,19 +227,18 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section" style="background: var(--warp-dark);">
+    <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
+            <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
             <p class="section-subtitle">
                 My journey through cybersecurity consulting and penetration testing across leading organizations
             </p>
             
             <div class="timeline">
-                <!-- Most Recent: Grant Thornton -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Apr 2023 - Jul 2024</div>
+                        <div class="timeline-date">Apr 2023 - Present</div>
                         <h3 class="timeline-title">Assistant Manager / Senior Consultant</h3>
                         <div class="timeline-company">Grant Thornton LLP • Gurgaon, Haryana</div>
                         <div class="timeline-description">
@@ -256,7 +253,6 @@
                     </div>
                 </div>
 
-                <!-- Second: Ernst & Young -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -275,11 +271,10 @@
                     </div>
                 </div>
 
-                <!-- First: Indian Cyber Institute -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Sep 2021 - Jul 2021</div>
+                        <div class="timeline-date">Sep 2020 - Jul 2021</div>
                         <h3 class="timeline-title">Security Analyst</h3>
                         <div class="timeline-company">Indian Cyber Institute (ICI) • Mumbai, Maharashtra</div>
                         <div class="timeline-description">
@@ -299,7 +294,7 @@
     <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
+            <h2 class="section-title">Skills & <span class="gradient-text">Expertise</span></h2>
             <p class="section-subtitle">
                 Comprehensive cybersecurity skillset covering offensive security, defensive measures, and threat intelligence
             </p>
@@ -359,9 +354,9 @@
     </section>
 
     <!-- Recognition Section -->
-    <section class="section" style="background: var(--warp-dark);">
+    <section class="section">
         <div class="container">
-            <h2 class="section-title">Recognition & Awards</h2>
+            <h2 class="section-title">Recognition & <span class="gradient-text">Awards</span></h2>
             <p class="section-subtitle">
                 Professional recognition for excellence in cybersecurity consulting and red team operations
             </p>
@@ -372,11 +367,11 @@
                     <div style="font-size: 40px; margin-bottom: 20px;">🌟</div>
                     <h3 style="color: var(--text-primary); margin-bottom: 12px; font-size: 20px;">Spot Award 2025</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 14px;">Grant Thornton LLP</p>
-                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-md); padding: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-lg); padding: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
                         <span style="color: var(--terminal-muted);">$ </span>
                         <span style="color: var(--terminal-text);">echo "Outstanding performance in 2025"</span>
                         <br>
-                        <span style="color: var(--accent-green);">Outstanding performance in 2025</span>
+                        <span style="color: var(--success-green);">Outstanding performance in 2025</span>
                     </div>
                 </div>
 
@@ -385,11 +380,11 @@
                     <div style="font-size: 40px; margin-bottom: 20px;">⭐</div>
                     <h3 style="color: var(--text-primary); margin-bottom: 12px; font-size: 20px;">Spot Award 2024</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 14px;">Grant Thornton LLP</p>
-                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-md); padding: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-lg); padding: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
                         <span style="color: var(--terminal-muted);">$ </span>
                         <span style="color: var(--terminal-text);">echo "Exceptional cybersecurity delivery"</span>
                         <br>
-                        <span style="color: var(--accent-green);">Exceptional cybersecurity delivery</span>
+                        <span style="color: var(--success-green);">Exceptional cybersecurity delivery</span>
                     </div>
                 </div>
 
@@ -398,11 +393,11 @@
                     <div style="font-size: 40px; margin-bottom: 20px;">🏆</div>
                     <h3 style="color: var(--text-primary); margin-bottom: 12px; font-size: 20px;">I am Exceptional!</h3>
                     <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 14px;">Ernst & Young (2021 & 2022)</p>
-                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-md); padding: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-lg); padding: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
                         <span style="color: var(--terminal-muted);">$ </span>
                         <span style="color: var(--terminal-text);">echo "Excellence in consulting & red team ops"</span>
                         <br>
-                        <span style="color: var(--accent-green);">Excellence in consulting & red team ops</span>
+                        <span style="color: var(--success-green);">Excellence in consulting & red team ops</span>
                     </div>
                 </div>
             </div>
@@ -412,7 +407,7 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
+            <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
             <p class="section-subtitle">
                 Ready to strengthen your security posture? Let's discuss how we can protect your digital assets together.
             </p>
@@ -425,17 +420,13 @@
                             <span>sachinb716@gmail.com</span>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Gurgaon, Haryana, India</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-user-secret"></i>
-                            <span>elementalsouls</span>
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/sachinsharma8080</span>
                         </div>
                     </div>
 
-                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-md); padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; margin: 32px 0;">
-                        <span style="color: var(--accent-blue);">⚡ </span>
+                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-lg); padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; margin: 32px 0;">
+                        <span style="color: var(--primary-green);">⚡ </span>
                         <span style="color: var(--terminal-text);">ssh elementalsouls@cyberspace.htb -p 2222</span>
                     </div>
 
@@ -462,7 +453,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p style="color: var(--text-secondary);">&copy; 2024 Sachin Sharma | elementalsouls | All rights reserved.</p>
+                <p style="color: var(--text-muted);">&copy; 2025 Sachin Sharma | elementalsouls | All rights reserved.</p>
                 <div class="footer-command">
                     <span style="color: var(--terminal-muted);">$ </span>
                     <span style="color: var(--terminal-text);">exit 0 && echo "Thanks for visiting!"</span>

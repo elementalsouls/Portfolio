@@ -68,15 +68,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Terminal cursor blinking animation
-const cursor = document.querySelector('.terminal-cursor');
-if (cursor) {
-    setInterval(() => {
-        cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-    }, 500);
-}
-
-// Smooth animations for cards
+// Intersection Observer for animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -85,46 +77,157 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
         }
     });
 }, observerOptions);
 
-// Observe elements for animation
-document.querySelectorAll('.card, .timeline-item, .stat').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+// Observe elements for animation on scroll
+document.addEventListener('DOMContentLoaded', () => {
+    // Add animation classes to elements
+    document.querySelectorAll('.hero-card').forEach(el => {
+        el.classList.add('scale-in');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.service-card, .skill-category-card, .timeline-item').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.about-card').forEach(el => {
+        el.classList.add('slide-in-left');
+        observer.observe(el);
+    });
+
+    document.querySelectorAll('.skill-progress').forEach(el => {
+        el.classList.add('slide-in-right');
+        observer.observe(el);
+    });
+
+    // Animate skill bars when they come into view
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillFills = entry.target.querySelectorAll('.skill-fill');
+                skillFills.forEach(fill => {
+                    const width = fill.getAttribute('data-width');
+                    setTimeout(() => {
+                        fill.style.width = width;
+                    }, 500);
+                });
+                skillObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.skill-progress').forEach(el => {
+        skillObserver.observe(el);
+    });
 });
 
-// Add some terminal typing effect
-function typeText(element, text, speed = 100) {
-    if (!element) return;
-    
-    element.textContent = '';
-    let i = 0;
-    
-    const typeInterval = setInterval(() => {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-        } else {
-            clearInterval(typeInterval);
+// Form submission (basic validation)
+const form = document.querySelector('.form');
+if (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(form);
+        const name = form.querySelector('input[type="text"]').value;
+        const email = form.querySelector('input[type="email"]').value;
+        const subject = form.querySelectorAll('input[type="text"]')[1].value;
+        const message = form.querySelector('textarea').value;
+        
+        // Basic validation
+        if (!name || !email || !subject || !message) {
+            alert('Please fill in all fields');
+            return;
         }
-    }, speed);
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+        
+        // Success message (in real implementation, you would send this to a server)
+        alert('Thank you for your message! I will get back to you soon.');
+        form.reset();
+    });
 }
 
-// Initialize typing effect on load
+// Typing effect for hero title
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+// Initialize typing effect
 window.addEventListener('load', () => {
-    const terminalCmd = document.querySelector('.terminal-cmd');
-    if (terminalCmd && terminalCmd.textContent.includes('nmap')) {
-        const originalText = terminalCmd.textContent;
-        typeText(terminalCmd, originalText, 150);
+    const nameElement = document.querySelector('.name');
+    if (nameElement) {
+        const originalText = nameElement.textContent;
+        typeWriter(nameElement, originalText, 150);
     }
 });
 
-console.log('🚀 Portfolio loaded successfully!');
-console.log('💻 Welcome to elementalsouls cybersecurity terminal');
-console.log('🔐 System ready for penetration testing...');
+// Parallax effect for hero section
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroCard = document.querySelector('.hero-card');
+    if (heroCard) {
+        heroCard.style.transform = `translateY(${scrolled * 0.1}px)`;
+    }
+});
+
+// Add some interactive hover effects
+document.querySelectorAll('.service-card, .skill-category-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-8px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Dynamic year update
+document.addEventListener('DOMContentLoaded', () => {
+    const currentYear = new Date().getFullYear();
+    const yearElements = document.querySelectorAll('.current-year');
+    yearElements.forEach(el => {
+        el.textContent = currentYear;
+    });
+});
+
+// Console easter egg
+console.log('%c🚀 Welcome to Sachin Sharma\'s Portfolio!', 'color: #6366f1; font-size: 16px; font-weight: bold;');
+console.log('%c💻 Cybersecurity Professional', 'color: #059669; font-size: 14px;');
+console.log('%c🔐 Penetration Tester & Security Analyst', 'color: #dc2626; font-size: 14px;');
+console.log('%c⚡ elementalsouls', 'color: #7c3aed; font-size: 14px;');
+
+// Performance optimization: Lazy load images if any
+const images = document.querySelectorAll('img[data-src]');
+const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+        }
+    });
+});
+
+images.forEach(img => imageObserver.observe(img));

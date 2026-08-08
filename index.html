@@ -136,6 +136,10 @@ section.blk{padding:92px 0;position:relative}
 .proj::before{content:"";position:absolute;inset:0;background:radial-gradient(560px circle at var(--mx,50%) var(--my,0%),rgba(196,236,90,.06),transparent 40%);opacity:0;transition:opacity .3s}
 .proj:hover{border-color:var(--line-2);transform:translateY(-4px)}
 .proj:hover::before{opacity:1}
+.proj{cursor:pointer}
+.card-link{position:absolute;inset:0;z-index:1;border-radius:inherit}
+.proj-top,.proj h3,.proj .role-line,.proj .tagline,.proj .detail,.proj .research-q,.proj-metrics{position:relative;z-index:2;pointer-events:none}
+.proj-links{position:relative;z-index:2}
 .proj-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
 .proj-badge{width:44px;height:44px;border-radius:11px;background:var(--bg);border:1px solid var(--line-2);display:grid;place-items:center;color:var(--accent);flex-shrink:0}
 .proj-badge svg{width:22px;height:22px}
@@ -324,6 +328,7 @@ footer{border-top:1px solid var(--line);padding:32px 0}
     </div>
     <div class="proj-grid">
       <article class="proj rv">
+        <a class="card-link" href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank" rel="noopener" aria-label="Open Claude-BugHunter on GitHub"></a>
         <div class="proj-top">
           <div class="proj-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l3 3h4v4l3 3-3 3v4h-4l-3 3-3-3H5v-4l-3-3 3-3V5h4z"/><circle cx="12" cy="12" r="3"/></svg></div>
           <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.6 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>3,300+</span>
@@ -346,6 +351,7 @@ footer{border-top:1px solid var(--line);padding:32px 0}
       </article>
 
       <article class="proj rv">
+        <a class="card-link" href="https://github.com/elementalsouls/Claude-OSINT" target="_blank" rel="noopener" aria-label="Open Claude-OSINT on GitHub"></a>
         <div class="proj-top">
           <div class="proj-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
           <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.6 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>2,200+</span>

@@ -1,467 +1,594 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sachin Sharma - Cybersecurity Professional</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sachin Sharma — Offensive Security & AI Automation</title>
+<meta name="description" content="Sachin Sharma — OSCP/CRTO Offensive Security Engineer building LLM-powered autonomous agents for vulnerability discovery. Creator of Claude-BugHunter and Claude-OSINT." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#0a0b0d; --bg-2:#0e1013; --surface:#131519; --surface-2:#171a1f;
+  --line:rgba(255,255,255,.07); --line-2:rgba(255,255,255,.13);
+  --text:#eceef1; --muted:#a2a8b1; --faint:#6b7079;
+  --accent:#c4ec5a; --accent-dim:#9cbf3f; --accent-ink:#0a0b0d;
+  --cyan:#86c8e8;
+  --display:"Fraunces",Georgia,serif; --body:"Hanken Grotesk",sans-serif; --mono:"JetBrains Mono",monospace;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--body);
+  font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  letter-spacing:.002em;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+body::after{
+  content:""; position:fixed; z-index:0; pointer-events:none;
+  top:-30vh; right:-18vw; width:60vw; height:60vw;
+  background:radial-gradient(circle,rgba(196,236,90,.07),transparent 62%);
+  filter:blur(24px);
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;position:relative;z-index:1}
+.mono{font-family:var(--mono)}
+.kicker{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--accent-dim); display:inline-flex; align-items:center; gap:11px; font-weight:500;
+}
+.kicker::before{content:"";width:24px;height:1px;background:var(--accent-dim);opacity:.55}
+.accent{color:var(--accent)}
+
+/* ---------- NAV ---------- */
+header.nav{
+  position:fixed; top:0; left:0; right:0; z-index:50;
+  backdrop-filter:blur(14px); background:rgba(10,11,13,.55);
+  border-bottom:1px solid transparent; transition:border-color .3s,background .3s;
+}
+header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,11,13,.85)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:15px 32px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.brand .blip{width:8px;height:8px;background:var(--accent);border-radius:2px;box-shadow:0 0 10px var(--accent);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:14.5px;color:var(--muted);transition:color .2s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--accent);transition:width .25s}
+.nav-links a:hover{color:var(--text)}.nav-links a:hover::after{width:100%}
+.nav-cta{border:1px solid var(--line-2);padding:9px 17px;border-radius:8px;font-size:13px;font-family:var(--mono);transition:all .2s}
+.nav-cta:hover{border-color:var(--accent);color:var(--accent)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.burger span{width:22px;height:2px;background:var(--text);transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{padding:172px 0 96px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.32fr 1fr;gap:60px;align-items:center}
+.hero h1{font-family:var(--display);font-weight:500;font-size:clamp(40px,5.3vw,68px);line-height:1.04;letter-spacing:-.02em;margin:20px 0 0;font-optical-sizing:auto}
+.hero .subrole{font-family:var(--body);font-weight:600;font-size:clamp(16px,2vw,20px);color:var(--text);margin-top:16px;letter-spacing:-.01em}
+.hero .subrole .accent{font-weight:600}
+.hero p.lede{color:var(--muted);font-size:16.5px;max-width:50ch;margin-top:20px}
+.hero .meta{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-top:20px;letter-spacing:.03em;display:flex;flex-wrap:wrap;gap:8px 14px}
+.hero .meta b{color:var(--accent-dim);font-weight:500}
+.hero-cta{display:flex;gap:13px;margin-top:32px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:9px;font-size:14px;font-weight:600;transition:all .22s;cursor:pointer;border:1px solid transparent;font-family:var(--body)}
+.btn svg{width:16px;height:16px}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(196,236,90,.5)}
+.btn-ghost{border-color:var(--line-2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--text);transform:translateY(-2px)}
+/* status + proof + portrait */
+.status{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--accent);background:rgba(196,236,90,.07);border:1px solid rgba(196,236,90,.24);padding:7px 13px;border-radius:20px;margin-bottom:22px}
+.status .live{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 2s infinite}
+.proof{display:flex;flex-wrap:wrap;gap:9px 20px;margin-top:18px;font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.proof span{display:inline-flex;align-items:center;gap:7px}
+.proof svg{width:13px;height:13px;color:var(--accent);flex-shrink:0}
+.proof b{color:var(--text);font-weight:500}
+.portrait{position:relative;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,var(--surface),var(--bg-2));box-shadow:0 34px 74px -34px rgba(0,0,0,.85)}
+.portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:grayscale(1) contrast(1.04);display:block}
+.portrait .mono-fallback{position:absolute;inset:0;z-index:0;display:grid;place-items:center;font-family:var(--display);font-weight:500;font-size:96px;color:#2a2e34}
+.portrait::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(to top,rgba(10,11,13,.6),transparent 46%);box-shadow:inset 0 0 0 1px rgba(196,236,90,.08)}
+.p-badge{position:absolute;left:14px;bottom:14px;z-index:3;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--text);background:rgba(10,11,13,.6);backdrop-filter:blur(6px);border:1px solid var(--line-2);padding:6px 11px;border-radius:8px}
+.p-badge .live{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.id-card{
+  background:linear-gradient(160deg,var(--surface),var(--bg-2));
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  box-shadow:0 30px 70px -34px rgba(0,0,0,.8);position:relative;
+}
+.id-top{display:flex;align-items:center;justify-content:space-between;padding:13px 17px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--faint)}
+.id-dots{display:flex;gap:7px}.id-dots i{width:10px;height:10px;border-radius:50%;display:block}
+.id-dots i:nth-child(1){background:#ff5f57}.id-dots i:nth-child(2){background:#febc2e}.id-dots i:nth-child(3){background:#28c840}
+.id-body{padding:22px 20px;font-family:var(--mono);font-size:12.5px;line-height:2}
+.id-body .cmt{color:var(--faint)}
+.id-body .k{color:var(--cyan)}.id-body .v{color:var(--text)}
+.id-body .arr{color:var(--accent)}
+.typed::after{content:"▋";color:var(--accent);animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hstat{padding:26px 8px;border-right:1px solid var(--line)}
+.hstat:last-child{border-right:0}
+.hstat .n{font-family:var(--display);font-weight:500;font-size:clamp(30px,4vw,46px);letter-spacing:-.02em;line-height:1}
+.hstat .lab{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:11px}
+
+/* ---------- PROFILE STRIP ---------- */
+.profile{padding:76px 0;border-bottom:1px solid var(--line)}
+.profile-in{display:grid;grid-template-columns:.82fr 1fr;gap:46px;align-items:center}
+.profile p{font-size:clamp(17px,2.1vw,21px);line-height:1.6;color:var(--text);font-weight:400;letter-spacing:-.01em}
+.profile p .soft{color:var(--muted)}
+.profile .accent{font-weight:500}
+
+/* ---------- SECTION SHELL ---------- */
+section.blk{padding:92px 0;position:relative}
+.sec-head{margin-bottom:48px;max-width:660px}
+.sec-head h2{font-family:var(--display);font-weight:500;font-size:clamp(28px,3.8vw,44px);letter-spacing:-.02em;line-height:1.08;margin-top:15px}
+.sec-head p{color:var(--muted);margin-top:14px;font-size:16px}
+
+/* ---------- PROJECTS ---------- */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.proj{
+  background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:30px;
+  position:relative;overflow:hidden;transition:border-color .3s,transform .3s;
+}
+.proj::before{content:"";position:absolute;inset:0;background:radial-gradient(560px circle at var(--mx,50%) var(--my,0%),rgba(196,236,90,.06),transparent 40%);opacity:0;transition:opacity .3s}
+.proj:hover{border-color:var(--line-2);transform:translateY(-4px)}
+.proj:hover::before{opacity:1}
+.proj-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.proj-badge{width:44px;height:44px;border-radius:11px;background:var(--bg);border:1px solid var(--line-2);display:grid;place-items:center;color:var(--accent);flex-shrink:0}
+.proj-badge svg{width:22px;height:22px}
+.stars{font-family:var(--mono);font-size:13px;color:var(--accent);display:inline-flex;align-items:center;gap:6px;background:rgba(196,236,90,.08);border:1px solid rgba(196,236,90,.22);padding:5px 11px;border-radius:20px;white-space:nowrap}
+.stars svg{width:13px;height:13px}
+.proj h3{font-family:var(--display);font-weight:500;font-size:26px;letter-spacing:-.01em;margin:18px 0 3px}
+.proj .role-line{font-family:var(--mono);font-size:11.5px;color:var(--accent-dim);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.proj .tagline{color:var(--muted);font-size:14.5px}
+.proj .detail{color:var(--faint);font-size:13.5px;margin-top:12px;line-height:1.6}
+.proj .detail b{color:var(--muted);font-weight:500}
+.proj-metrics{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.chip{font-family:var(--mono);font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:5px 9px;background:var(--bg-2)}
+.chip b{color:var(--text);font-weight:500}
+.proj-links{display:flex;gap:20px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.proj-links a{font-family:var(--mono);font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:7px;transition:color .2s}
+.proj-links a:hover{color:var(--accent)}
+.proj-links svg{width:15px;height:15px}
+.research-q{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line-2);font-size:13.5px;color:var(--muted);line-height:1.55}
+.research-q b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:5px;font-weight:500}
+/* news */
+.news-list{border-top:1px solid var(--line)}
+.news-item{display:grid;grid-template-columns:96px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.news-item .yr{font-family:var(--mono);font-size:12.5px;color:var(--accent-dim);letter-spacing:.04em}
+.news-item p{color:var(--muted);font-size:15.5px}
+.news-item p b{color:var(--text);font-weight:600}
+@media(max-width:640px){.news-item{grid-template-columns:1fr;gap:4px}}
+
+/* ---------- SPLIT ---------- */
+.split{display:grid;grid-template-columns:.88fr 1.28fr;gap:58px;align-items:start}
+.rint{border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-bottom:13px;background:var(--surface);transition:.25s}
+.rint:hover{border-color:var(--line-2);background:var(--surface-2)}
+.rint h4{font-family:var(--display);font-weight:500;font-size:18px;display:flex;align-items:center;gap:11px;letter-spacing:-.01em}
+.rint h4 .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.rint p{color:var(--muted);font-size:14px;margin-top:8px}
+.rnote{font-family:var(--mono);font-size:12.5px;color:var(--faint);margin-top:22px;line-height:1.8;border-left:2px solid var(--accent-dim);padding-left:15px}
+.tl{position:relative;padding-left:30px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--accent-dim),var(--line))}
+.tl-item{position:relative;padding-bottom:36px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-30px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:2px solid var(--accent-dim);transition:.25s}
+.tl-item:hover::before{background:var(--accent);box-shadow:0 0 14px var(--accent)}
+.tl-date{font-family:var(--mono);font-size:12px;color:var(--accent-dim);letter-spacing:.04em}
+.tl-role{font-family:var(--display);font-weight:500;font-size:20px;margin:7px 0 2px;letter-spacing:-.01em}
+.tl-co{font-size:13.5px;color:var(--muted);margin-bottom:13px}
+.tl-item ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.tl-item li{font-size:14px;color:var(--muted);padding-left:20px;position:relative;line-height:1.55}
+.tl-item li::before{content:"▹";position:absolute;left:0;color:var(--accent-dim)}
+.tl-item li b{color:var(--text);font-weight:600}
+
+/* ---------- SKILLS ---------- */
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;transition:.25s}
+.skill-card:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.skill-card h3{font-family:var(--display);font-weight:500;font-size:17px;display:flex;align-items:center;gap:11px;margin-bottom:16px;letter-spacing:-.01em}
+.skill-card h3 svg{width:19px;height:19px;color:var(--accent);flex-shrink:0}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:5px 9px;transition:.2s}
+.tag:hover{border-color:var(--accent);color:var(--accent)}
+.certline{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.cert{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;border:1px solid var(--line-2);border-radius:10px;padding:11px 16px;background:var(--surface)}
+.cert svg{width:16px;height:16px;color:var(--accent);flex-shrink:0}
+.cert b{color:var(--text)}.cert span{color:var(--faint)}
+
+/* ---------- AWARDS ---------- */
+.aw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.aw{background:linear-gradient(165deg,var(--surface),var(--bg-2));border:1px solid var(--line);border-radius:14px;padding:26px;transition:.25s}
+.aw:hover{border-color:var(--accent-dim);transform:translateY(-3px)}
+.aw .yr{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.09em}
+.aw h3{font-family:var(--display);font-weight:500;font-size:21px;margin:12px 0 6px;letter-spacing:-.01em}
+.aw p{color:var(--muted);font-size:13.5px}
+
+/* ---------- CONTACT ---------- */
+.contact{text-align:center;padding:104px 0}
+.contact h2{font-family:var(--display);font-weight:500;font-size:clamp(32px,4.6vw,56px);letter-spacing:-.02em;line-height:1.06}
+.contact p{color:var(--muted);max-width:48ch;margin:18px auto 0;font-size:16.5px}
+.contact-actions{display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap}
+.socials{display:flex;gap:14px;justify-content:center;margin-top:42px}
+.soc{width:48px;height:48px;border:1px solid var(--line-2);border-radius:12px;display:grid;place-items:center;color:var(--muted);transition:.25s}
+.soc:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-3px)}
+.soc svg{width:20px;height:20px}
+
+footer{border-top:1px solid var(--line);padding:32px 0}
+.foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.foot-in p{font-family:var(--mono);font-size:12.5px;color:var(--faint)}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero-grid,.split,.profile-in{grid-template-columns:1fr;gap:38px}
+  .proj-grid,.skill-grid,.aw-grid{grid-template-columns:1fr}
+  .nav-links{display:none}.burger{display:flex}
+  .hero{padding:140px 0 72px}
+}
+@media(max-width:560px){
+  .hero-stats{grid-template-columns:1fr}
+  .hstat{border-right:0;border-bottom:1px solid var(--line)}.hstat:last-child{border-bottom:0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">⚡ Sachin Sharma</span>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#top" class="brand"><span class="blip"></span>Sachin Sharma</a>
+    <nav class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#news">News</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
     </nav>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    Cybersecurity Professional
-                </div>
-                <h1 class="hero-title">
-                    Hi, I'm <span class="gradient-text">Sachin Sharma</span>
-                </h1>
-                <p class="hero-subtitle">
-                    A passionate cybersecurity expert with 4+ years of experience in penetration testing, vulnerability assessments, and red team operations. I help organizations strengthen their security posture and protect against evolving cyber threats.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Let's Connect
-                    </a>
-                    <a href="#about" class="btn btn-secondary">
-                        <i class="fas fa-user"></i>
-                        About Me
-                    </a>
-                </div>
-                <div class="terminal-command">
-                    <span class="prompt">$</span>
-                    <span class="command">whoami && echo "elementalsouls - Penetration Tester"</span>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="warp-terminal">
-                    <div class="warp-header">
-                        <div class="warp-controls">
-                            <div class="warp-dots">
-                                <div class="warp-dot red"></div>
-                                <div class="warp-dot yellow"></div>
-                                <div class="warp-dot green"></div>
-                            </div>
-                            <div class="warp-title">~/work-env/security-internal</div>
-                        </div>
-                        <div class="warp-actions">
-                            <span>Share</span>
-                            <i class="fas fa-search"></i>
-                            <i class="fas fa-cog"></i>
-                            <i class="fas fa-user"></i>
-                        </div>
-                    </div>
-                    <div class="warp-tabs">
-                        <div class="warp-tab">ls</div>
-                        <div class="warp-tab active">new-warp</div>
-                        <div class="warp-tab">outreach</div>
-                        <div class="warp-tab">security-internal</div>
-                        <div class="warp-tab">warp-server</div>
-                        <div class="warp-tab">warp-test</div>
-                        <div class="warp-tab">+</div>
-                    </div>
-                    <div class="warp-content">
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">~/work-env</span>
-                            <span class="terminal-path">(0.01s)</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-cmd">cd security-internal/</span>
-                        </div>
-                        <div class="terminal-line"></div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">~/work-env/security-internal</span>
-                            <span class="terminal-git">git</span>
-                            <span class="terminal-path">(main)</span>
-                            <span class="terminal-muted">(007s)</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-cmd">nmap -sS -sV target.htb</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">Starting Nmap 7.94 ( https://nmap.org )</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">Nmap scan report for target.htb (192.168.1.100)</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">Host is up (0.00085s latency).</span>
-                        </div>
-                        <div class="terminal-line"></div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">PORT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATE&nbsp;&nbsp;SERVICE&nbsp;&nbsp;&nbsp;VERSION</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">22/tcp&nbsp;&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;ssh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenSSH 8.2p1</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">80/tcp&nbsp;&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;http&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Apache 2.4.41</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-output">443/tcp&nbsp;&nbsp;open&nbsp;&nbsp;&nbsp;ssl/http&nbsp;&nbsp;&nbsp;Apache 2.4.41</span>
-                        </div>
-                        <div class="terminal-line"></div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">~/work-env/security-internal</span>
-                            <span class="terminal-git">git:(main)</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-cmd">msfconsole<span class="terminal-cursor"></span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="status rv"><span class="live"></span>Available for research &amp; senior offensive-security roles</span>
+        <span class="kicker rv">Offensive Security · AI Automation</span>
+        <h1 class="rv">Sachin Sharma</h1>
+        <p class="subrole rv">Offensive Security Engineer — <span class="accent">Red&nbsp;Team &amp; AI&nbsp;Security Automation</span></p>
+        <p class="lede rv">Six years red-teaming Fortune 500 networks, now building LLM-powered autonomous agents that scale reconnaissance, vulnerability discovery, and reporting. Creator of two open-source AI-security frameworks adopted by red teamers and bug-bounty hunters worldwide.</p>
+        <div class="proof rv">
+          <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.6 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg><b>5,500+</b>&nbsp;GitHub stars</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="7" r="2.5"/><path d="M6 8.5v7M18 9.5c0 3-4 2.5-4 5.5"/></svg><b>830+</b>&nbsp;forks</span>
+          <span>Used by red teamers worldwide</span>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
-            <p class="section-subtitle">
-                Cybersecurity professional with expertise in penetration testing, vulnerability assessments, and security consulting
-            </p>
-            
-            <div class="grid grid-2">
-                <div>
-                    <div class="card">
-                        <h3>Professional Summary</h3>
-                        <p style="color: var(--text-secondary); margin: 16px 0; line-height: 1.6;">
-                            I am a dedicated cybersecurity professional with extensive experience in vulnerability assessments, 
-                            penetration testing, and security consulting. Currently working as an Assistant Manager at Grant Thornton LLP,
-                            I have successfully led numerous red team operations and security assessments for high-profile clients, 
-                            I specialize in providing cybersecurity consulting services to strengthen frameworks for SMEs.
-                        </p>
-                        <p style="color: var(--text-secondary); line-height: 1.6;">
-                            My expertise spans across comprehensive security assessments, threat intelligence, and implementing 
-                            targeted remediation strategies that have enhanced client defenses and organizational resilience.
-                        </p>
-                    </div>
-                    
-                    <div class="stats">
-                        <div class="stat">
-                            <span class="stat-number">4+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">40+</span>
-                            <span class="stat-label">Security Projects</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">97%</span>
-                            <span class="stat-label">Client Satisfaction</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <div class="card">
-                        <h3>Education & Certifications</h3>
-                        <div style="margin: 24px 0;">
-                            <h4 style="color: var(--text-primary); margin-bottom: 8px;">Bachelor of Technology, Information Technology</h4>
-                            <p style="color: var(--text-secondary); font-size: 14px;">ABES Engineering College, Ghaziabad, UP (2016-2021)</p>
-                            <p style="color: var(--text-muted); font-size: 14px;">CGPA: 6.8</p>
-                        </div>
-                        
-                        <h4 style="color: var(--text-primary); margin: 24px 0 16px 0;">Certifications</h4>
-                        <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--primary-green);"></i>
-                                <span style="color: var(--text-secondary);">Offensive Security Certified Professional (OSCP)</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--primary-green);"></i>
-                                <span style="color: var(--text-secondary);">Certified Ethical Hacker (CEH)</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--primary-green);"></i>
-                                <span style="color: var(--text-secondary);">TCM Security - Movement, Pivoting and Persistence</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--primary-green);"></i>
-                                <span style="color: var(--text-secondary);">Offensive Approach to Hunt Bugs</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 12px;">
-                                <i class="fas fa-certificate" style="color: var(--primary-green);"></i>
-                                <span style="color: var(--text-secondary);">Windows Privilege Escalation</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-cta rv">
+          <a href="#projects" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+            View the frameworks
+          </a>
+          <a href="Sachin_Sharma_CV.pdf" target="_blank" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+            Download CV
+          </a>
         </div>
-    </section>
+      </div>
+      <figure class="portrait rv">
+        <div class="mono-fallback">SS</div>
+        <img src="assets/profile.jpg" alt="Sachin Sharma" loading="lazy" onerror="this.remove()" />
+        <span class="p-badge"><span class="live"></span>elementalsouls</span>
+      </figure>
+    </div>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
-            <p class="section-subtitle">
-                My journey through cybersecurity consulting and penetration testing across leading organizations
-            </p>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Apr 2023 - Present</div>
-                        <h3 class="timeline-title">Assistant Manager / Senior Consultant</h3>
-                        <div class="timeline-company">Grant Thornton LLP • Gurgaon, Haryana</div>
-                        <div class="timeline-description">
-                            <ul>
-                                <li>Spearheaded nationwide cybersecurity operations, achieving 30% reduction in attack vectors</li>
-                                <li>Led Red Team operations and conducted penetration testing with 99% satisfaction rate</li>
-                                <li>Enhanced security frameworks through Active Directory Penetration Testing</li>
-                                <li>Performed comprehensive Infrastructure Security Assessments across networks and devices</li>
-                                <li>Designed comprehensive phishing simulation campaigns enhancing organizational resilience by 90%</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <div class="hero-stats rv">
+      <div class="hstat"><div class="n" data-count="6" data-suffix="+">0</div><div class="lab">Years red teaming</div></div>
+      <div class="hstat"><div class="n" data-count="5500" data-suffix="+" data-comma="1">0</div><div class="lab">GitHub stars shipped</div></div>
+      <div class="hstat"><div class="n" data-count="50000" data-suffix="+" data-comma="1">0</div><div class="lab">Exposed creds neutralized</div></div>
+    </div>
+  </div>
+</section>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Aug 2021 - Mar 2023</div>
-                        <h3 class="timeline-title">Associate Consultant</h3>
-                        <div class="timeline-company">Ernst & Young (EY) LLP • Mumbai, Maharashtra</div>
-                        <div class="timeline-description">
-                            <ul>
-                                <li>Developed and executed comprehensive testing strategies, resulting in 40% increase in product release quality</li>
-                                <li>Delivered actionable Cyber Threat Intelligence (CTI) assessments with 4-hour response times</li>
-                                <li>Led Red Team engagements and over 40 Application Security projects</li>
-                                <li>Conducted thorough Web Application Penetration Testing identifying high-risk vulnerabilities</li>
-                                <li>Performed targeted digital forensics assessments with focus on Active Directory environments</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<!-- PROFILE -->
+<section class="profile">
+  <div class="wrap profile-in">
+    <div class="id-card rv">
+      <div class="id-top"><div class="id-dots"><i></i><i></i><i></i></div><span>operator@elementalsouls</span></div>
+      <div class="id-body">
+        <div><span class="cmt"># whoami</span></div>
+        <div><span class="k">role</span> &nbsp;<span class="arr">→</span> <span class="v">Offensive Security Engineer</span></div>
+        <div><span class="k">focus</span> <span class="arr">→</span> <span class="v">AI-driven vuln discovery</span></div>
+        <div><span class="k">certs</span> <span class="arr">→</span> <span class="v">OSCP, CRTO</span></div>
+        <div><span class="k">ships</span> <span class="arr">→</span> <span class="v typed" id="typed"></span></div>
+      </div>
+    </div>
+    <div>
+      <span class="kicker rv">Profile</span>
+      <p class="rv" style="margin-top:18px">I sit at the intersection of <span class="accent">offensive security and applied AI</span> — an OSCP/CRTO red teamer who now designs the LLM agents that automate the work. <span class="soft">Across roles at Grant Thornton and EY I've led red team operations for Fortune 500 clients, cut manual tradecraft by more than half with GenAI-driven workflows, and open-sourced the tooling behind it — now trusted by thousands of security practitioners on GitHub. I bring the same builder's instinct to any team investing in autonomous, AI-driven security.</span></p>
+    </div>
+  </div>
+</section>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Sep 2020 - Jul 2021</div>
-                        <h3 class="timeline-title">Security Analyst</h3>
-                        <div class="timeline-company">Indian Cyber Institute (ICI) • Mumbai, Maharashtra</div>
-                        <div class="timeline-description">
-                            <ul>
-                                <li>Provided specialized cybersecurity consulting services to strengthen frameworks for SMEs</li>
-                                <li>Conducted comprehensive vulnerability assessments and penetration testing (VAPT)</li>
-                                <li>Identified and exploited security weaknesses, providing detailed reports for risk mitigation</li>
-                                <li>Delivered thorough security reports with tailored remediation recommendations</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- PROJECTS -->
+<section class="blk" id="projects">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">01 — Open-source research</span>
+      <h2>AI-security frameworks I build &amp; ship.</h2>
+      <p>Autonomous agent tooling that turns LLM assistants into full recon-to-report operators — adopted globally within months of release.</p>
+    </div>
+    <div class="proj-grid">
+      <article class="proj rv">
+        <div class="proj-top">
+          <div class="proj-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l3 3h4v4l3 3-3 3v4h-4l-3 3-3-3H5v-4l-3-3 3-3V5h4z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.6 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>3,300+</span>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Skills & <span class="gradient-text">Expertise</span></h2>
-            <p class="section-subtitle">
-                Comprehensive cybersecurity skillset covering offensive security, defensive measures, and threat intelligence
-            </p>
-            
-            <div class="grid grid-4">
-                <div class="card skill-category">
-                    <h3><i class="fas fa-user-secret"></i> Penetration Testing</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">OSCP</span>
-                        <span class="skill-tag">VAPT</span>
-                        <span class="skill-tag">Red Team</span>
-                        <span class="skill-tag">Web App Testing</span>
-                        <span class="skill-tag">Infrastructure Testing</span>
-                        <span class="skill-tag">Social Engineering</span>
-                    </div>
-                </div>
-                
-                <div class="card skill-category">
-                    <h3><i class="fas fa-server"></i> Systems & Networks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Active Directory</span>
-                        <span class="skill-tag">Windows PrivEsc</span>
-                        <span class="skill-tag">Linux Security</span>
-                        <span class="skill-tag">Network Analysis</span>
-                        <span class="skill-tag">Firewall Config</span>
-                        <span class="skill-tag">SIEM</span>
-                    </div>
-                </div>
-
-                <div class="card skill-category">
-                    <h3><i class="fas fa-search"></i> Threat Intelligence</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">CTI Analysis</span>
-                        <span class="skill-tag">Incident Response</span>
-                        <span class="skill-tag">Digital Forensics</span>
-                        <span class="skill-tag">Threat Hunting</span>
-                        <span class="skill-tag">OSINT</span>
-                        <span class="skill-tag">Malware Analysis</span>
-                    </div>
-                </div>
-
-                <div class="card skill-category">
-                    <h3><i class="fas fa-tools"></i> Security Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Burp Suite</span>
-                        <span class="skill-tag">Metasploit</span>
-                        <span class="skill-tag">Nmap</span>
-                        <span class="skill-tag">Wireshark</span>
-                        <span class="skill-tag">Kali Linux</span>
-                        <span class="skill-tag">Bloodhound</span>
-                        <span class="skill-tag">Cobalt Strike</span>
-                        <span class="skill-tag">OWASP ZAP</span>
-                    </div>
-                </div>
-            </div>
+        <h3>Claude-BugHunter</h3>
+        <div class="role-line">Creator &amp; Lead Developer</div>
+        <p class="tagline">An AI agent skill framework that turns LLM coding assistants into autonomous bug-hunting &amp; red-team operators.</p>
+        <p class="detail">Its evidence base curates <b>681 disclosed-vulnerability patterns</b> from real HackerOne &amp; Bugcrowd reports, driving a repeatable six-phase recon-to-report workflow that runs across <b>Claude Code, Codex &amp; OpenCode</b>.</p>
+        <p class="research-q"><b>Research angle</b>Can LLM agents reliably triage real vulnerability classes end-to-end — where do they succeed, and where do they silently fail?</p>
+        <div class="proj-metrics">
+          <span class="chip"><b>82</b> security skills</span>
+          <span class="chip"><b>15</b> workflow commands</span>
+          <span class="chip"><b>24</b> vuln classes</span>
+          <span class="chip"><b>460+</b> forks</span>
+          <span class="chip">Burp · MCP · ProjectDiscovery</span>
         </div>
-    </section>
-
-    <!-- Recognition Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Recognition & <span class="gradient-text">Awards</span></h2>
-            <p class="section-subtitle">
-                Professional recognition for excellence in cybersecurity consulting and red team operations
-            </p>
-            
-            <div class="grid grid-3">
-                <!-- Grant Thornton Spot Award 2025 -->
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 40px; margin-bottom: 20px;">🌟</div>
-                    <h3 style="color: var(--text-primary); margin-bottom: 12px; font-size: 20px;">Spot Award 2025</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 14px;">Grant Thornton LLP</p>
-                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-lg); padding: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
-                        <span style="color: var(--terminal-muted);">$ </span>
-                        <span style="color: var(--terminal-text);">echo "Outstanding performance in 2025"</span>
-                        <br>
-                        <span style="color: var(--success-green);">Outstanding performance in 2025</span>
-                    </div>
-                </div>
-
-                <!-- Grant Thornton Spot Award 2024 -->
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 40px; margin-bottom: 20px;">⭐</div>
-                    <h3 style="color: var(--text-primary); margin-bottom: 12px; font-size: 20px;">Spot Award 2024</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 14px;">Grant Thornton LLP</p>
-                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-lg); padding: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
-                        <span style="color: var(--terminal-muted);">$ </span>
-                        <span style="color: var(--terminal-text);">echo "Exceptional cybersecurity delivery"</span>
-                        <br>
-                        <span style="color: var(--success-green);">Exceptional cybersecurity delivery</span>
-                    </div>
-                </div>
-
-                <!-- EY I am Exceptional -->
-                <div class="card" style="text-align: center;">
-                    <div style="font-size: 40px; margin-bottom: 20px;">🏆</div>
-                    <h3 style="color: var(--text-primary); margin-bottom: 12px; font-size: 20px;">I am Exceptional!</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 14px;">Ernst & Young (2021 & 2022)</p>
-                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-lg); padding: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
-                        <span style="color: var(--terminal-muted);">$ </span>
-                        <span style="color: var(--terminal-text);">echo "Excellence in consulting & red team ops"</span>
-                        <br>
-                        <span style="color: var(--success-green);">Excellence in consulting & red team ops</span>
-                    </div>
-                </div>
-            </div>
+        <div class="proj-links">
+          <a href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>View source</a>
         </div>
-    </section>
+      </article>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
-            <p class="section-subtitle">
-                Ready to strengthen your security posture? Let's discuss how we can protect your digital assets together.
-            </p>
-            
-            <div style="max-width: 600px; margin: 0 auto;">
-                <div class="card">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>sachinb716@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <span>linkedin.com/in/sachinsharma8080</span>
-                        </div>
-                    </div>
-
-                    <div style="background: var(--terminal-bg); border: 1px solid var(--terminal-border); border-radius: var(--radius-lg); padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; margin: 32px 0;">
-                        <span style="color: var(--primary-green);">⚡ </span>
-                        <span style="color: var(--terminal-text);">ssh elementalsouls@cyberspace.htb -p 2222</span>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/sachinsharma8080/" target="_blank" class="social-link" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/elementalsouls" target="_blank" class="social-link" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" target="_blank" class="social-link" title="HackTheBox">
-                            <i class="fas fa-cube"></i>
-                        </a>
-                        <a href="#" target="_blank" class="social-link" title="TryHackMe">
-                            <i class="fas fa-shield-alt"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+      <article class="proj rv">
+        <div class="proj-top">
+          <div class="proj-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.6 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>2,200+</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p style="color: var(--text-muted);">&copy; 2025 Sachin Sharma | elementalsouls | All rights reserved.</p>
-                <div class="footer-command">
-                    <span style="color: var(--terminal-muted);">$ </span>
-                    <span style="color: var(--terminal-text);">exit 0 && echo "Thanks for visiting!"</span>
-                </div>
-            </div>
+        <h3>Claude-OSINT</h3>
+        <div class="role-line">Creator &amp; Lead Developer</div>
+        <p class="tagline">A paired AI recon framework — 5,500+ lines of structured tradecraft turning LLMs into external reconnaissance operators.</p>
+        <p class="detail">Automates <b>identity/SSO mapping</b> (Entra, M365, Okta, ADFS), cloud &amp; Kubernetes exposure discovery, and email-security auditing (SPF/DMARC/DKIM) — with sector packs for healthcare, finance, ICS/SCADA &amp; government.</p>
+        <p class="research-q"><b>Research angle</b>How far can autonomous agents map an organization's external attack surface from open-source signal alone — and how noisy is that signal?</p>
+        <div class="proj-metrics">
+          <span class="chip"><b>90+</b> recon modules</span>
+          <span class="chip"><b>48</b> secret regexes</span>
+          <span class="chip"><b>80+</b> search dorks</span>
+          <span class="chip"><b>27</b> attack-path templates</span>
+          <span class="chip"><b>372+</b> forks</span>
         </div>
-    </footer>
+        <div class="proj-links">
+          <a href="https://github.com/elementalsouls/Claude-OSINT" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>View source</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- RESEARCH + EXPERIENCE -->
+<section class="blk" id="research">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="sec-head rv" style="margin-bottom:26px">
+          <span class="kicker">02 — Where I'm headed</span>
+          <h2>Research interests.</h2>
+          <p>I want to study the systems I've been building by instinct: how autonomous offensive agents actually behave, where they break, and how to make them measurable and safe. Four threads I'd bring to a lab:</p>
+        </div>
+        <div class="rint rv"><h4><span class="dot"></span>Autonomous LLM agents for vuln discovery and Attack Surface Management</h4><p>Scaling recon-to-report pipelines with tool-calling agents — planning, orchestration, and reliability under real targets.</p></div>
+        <div class="rint rv"><h4><span class="dot"></span>Adversarial ML &amp; LLM red-teaming</h4><p>Prompt injection, agent memory/RAG poisoning, and jailbreak strategy discovery from the attacker's seat.</p></div>
+        <div class="rint rv"><h4><span class="dot"></span>AI-driven threat intelligence</h4><p>Turning noisy open-source and dark-web signal into predictive, operational threat models.</p></div>
+        <div class="rint rv"><h4><span class="dot"></span>Guardrails &amp; agent security</h4><p>Measuring and containing what autonomous offensive agents can actually do.</p></div>
+        <p class="rnote rv"># Seeking a Graduate Research Assistantship, Fall 2027 —<br># moving from enterprise consulting into rigorous research.</p>
+      </div>
+      <div>
+        <div class="sec-head rv" style="margin-bottom:30px">
+          <span class="kicker">03 — Track record</span>
+          <h2 id="experience">Experience.</h2>
+        </div>
+        <div class="tl">
+          <div class="tl-item rv">
+            <div class="tl-date">Aug 2024 — Present · Apr 2023 — Jul 2024</div>
+            <div class="tl-role">Assistant Manager → Senior Consultant, Red Team</div>
+            <div class="tl-co">Grant Thornton LLP · Gurgaon, India</div>
+            <ul>
+              <li>Led internal &amp; external red team operations for Fortune 500 clients, mapping critical attack paths across Active Directory, cloud &amp; endpoint — <b>reducing exploitable attack surface ~50%</b>.</li>
+              <li>Pioneered GenAI-driven offensive workflows — LLM automation and custom AI skills into recon, reporting &amp; dark-web monitoring — <b>cutting manual tradecraft 50–60%</b>.</li>
+              <li>Automated a dark-web monitoring program with N8N that surfaced <b>50,000+ exposed credentials</b> before exploitation.</li>
+              <li>Engineered custom Windows tooling &amp; PowerShell automation; ran phishing simulations that lifted employee reporting by 90%.</li>
+              <li>Simulated APT scenarios mapped to MITRE ATT&amp;CK; sustained a 95% client satisfaction rate.</li>
+            </ul>
+          </div>
+          <div class="tl-item rv">
+            <div class="tl-date">Aug 2021 — Mar 2023</div>
+            <div class="tl-role">Associate Consultant — Cyber Threat &amp; Vulnerability Mgmt</div>
+            <div class="tl-co">Ernst &amp; Young (EY) LLP · Mumbai, India</div>
+            <ul>
+              <li>Executed <b>15+ red team &amp; 40+ application-security engagements</b> across BFSI, healthcare &amp; energy verticals, uncovering critical and zero-day flaws.</li>
+              <li>Delivered Cyber Threat Intelligence reports that cut mean incident-response time by 25%.</li>
+              <li>Led web app &amp; Active Directory pentests — lateral movement, privilege escalation, auth flaws — and reviewed firewall/network configs against ISO 27001 &amp; CIS.</li>
+            </ul>
+          </div>
+          <div class="tl-item rv">
+            <div class="tl-date">Sep 2020 — Jul 2021</div>
+            <div class="tl-role">Security Analyst</div>
+            <div class="tl-co">Indian Cyber Institute · Mumbai, India</div>
+            <ul>
+              <li>Ran VAPT across web, infrastructure &amp; endpoint systems for small &amp; mid-sized enterprises.</li>
+              <li>Delivered prioritized remediation that measurably improved posture for resource-constrained clients.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="blk" id="news">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">04 — Recent activity</span>
+      <h2>News.</h2>
+    </div>
+    <div class="news-list rv">
+      <div class="news-item"><span class="yr">2026</span><p>Seeking a <b>Graduate Research Assistantship for Fall 2027</b> — reaching out to research groups working on autonomous AI security and adversarial ML.</p></div>
+      <div class="news-item"><span class="yr">2025</span><p><b>Claude-BugHunter crossed 3,300★</b> and Claude-OSINT 2,200★ — combined 5,500+ stars and 830+ forks from the security community.</p></div>
+      <div class="news-item"><span class="yr">2025</span><p>Awarded a <b>Spot Award at Grant Thornton</b> for AI-powered offensive tooling and the N8N dark-web monitoring program.</p></div>
+      <div class="news-item"><span class="yr">2024</span><p>Released <b>Claude-BugHunter &amp; Claude-OSINT</b> — open-source AI-security frameworks now adopted by red teamers and bug-bounty hunters worldwide.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="blk" id="skills">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">05 — Toolkit</span>
+      <h2>Skills &amp; expertise.</h2>
+      <p>From LLM agent engineering to Active Directory attack paths.</p>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card rv">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>AI &amp; Security Automation</h3>
+        <div class="tags"><span class="tag">LLM Offensive Tooling</span><span class="tag">AI Agent Skills</span><span class="tag">Claude Code</span><span class="tag">GenAI Automation</span><span class="tag">Prompt Engineering</span><span class="tag">AI Recon &amp; Bug Hunting</span><span class="tag">N8N</span></div>
+      </div>
+      <div class="skill-card rv">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>Offensive Security</h3>
+        <div class="tags"><span class="tag">Red Teaming</span><span class="tag">Adversary Simulation</span><span class="tag">BAS</span><span class="tag">Web / API Pentest</span><span class="tag">Active Directory</span><span class="tag">Exploit Dev</span><span class="tag">OSINT</span><span class="tag">Purple Teaming</span></div>
+      </div>
+      <div class="skill-card rv">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg>Cloud &amp; Infrastructure</h3>
+        <div class="tags"><span class="tag">Azure</span><span class="tag">AWS</span><span class="tag">Kubernetes</span><span class="tag">Config Review</span><span class="tag">Endpoint Hardening</span><span class="tag">Threat Modeling</span><span class="tag">Secure Code Review</span></div>
+      </div>
+      <div class="skill-card rv">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2l6 6-9 9-6 1 1-6z"/><path d="M3 21h18"/></svg>Tooling</h3>
+        <div class="tags"><span class="tag">Metasploit</span><span class="tag">Sliver</span><span class="tag">BloodHound</span><span class="tag">Burp Suite</span><span class="tag">Nessus</span><span class="tag">Impacket</span><span class="tag">Nmap</span><span class="tag">ProjectDiscovery</span></div>
+      </div>
+      <div class="skill-card rv">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z"/></svg>Frameworks &amp; Standards</h3>
+        <div class="tags"><span class="tag">MITRE ATT&amp;CK</span><span class="tag">Cyber Kill Chain</span><span class="tag">OWASP Top 10</span><span class="tag">NIST</span><span class="tag">Zero Trust</span><span class="tag">ISO 27001</span><span class="tag">CIS</span></div>
+      </div>
+      <div class="skill-card rv">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>Programming</h3>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">PowerShell</span><span class="tag">JavaScript</span></div>
+      </div>
+    </div>
+
+    <div class="certline rv">
+      <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg><b>OSCP</b><span>Offensive Security Certified Professional</span></div>
+      <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg><b>CRTO</b><span>Certified Red Team Operator</span></div>
+      <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg><b>HTB · TCM</b><span>Rasta Labs · Pivoting · Windows PrivEsc</span></div>
+      <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V5l8-3 8 3v14M4 19h16M4 19l8-3 8 3"/></svg><b>B.Tech, IT</b><span>ABES Engineering College · 2020</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="blk">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">06 — Recognition</span>
+      <h2>Awards.</h2>
+    </div>
+    <div class="aw-grid">
+      <div class="aw rv"><div class="yr">2024 &amp; 2025</div><h3>Spot Award</h3><p>Grant Thornton — for driving AI-powered tooling &amp; N8N dark-web monitoring initiatives and sustained client success.</p></div>
+      <div class="aw rv"><div class="yr">2022 &amp; 2023</div><h3>"I am Exceptional"</h3><p>Ernst &amp; Young — for delivering high-impact red team projects across multiple Fortune 500 clients.</p></div>
+      <div class="aw rv"><div class="yr">Ongoing</div><h3>5,500+ GitHub Stars</h3><p>Community adoption of Claude-BugHunter &amp; Claude-OSINT by red teamers and bug-bounty hunters worldwide.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="kicker rv" style="justify-content:center">07 — Let's talk</span>
+    <h2 class="rv">Building at the AI × security edge?</h2>
+    <p class="rv">Open to senior offensive-security roles, research collaborations, and graduate research assistantships — and always up for a conversation about autonomous red teaming.</p>
+    <div class="contact-actions rv">
+      <a href="mailto:sachinb716@gmail.com" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+        sachinb716@gmail.com
+      </a>
+      <a href="Sachin_Sharma_CV.pdf" target="_blank" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+        Download CV
+      </a>
+    </div>
+    <div class="socials rv">
+      <a class="soc" href="https://github.com/elementalsouls" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
+      <a class="soc" href="https://www.linkedin.com/in/sachinsharma8080/" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.25 8h4.5v12.5H.25zM8 8h4.3v1.7h.06c.6-1.1 2-2.3 4.14-2.3 4.4 0 5.25 2.9 5.25 6.7v6.4h-4.5v-5.7c0-1.36-.02-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.8H8z"/></svg></a>
+      <a class="soc" href="mailto:sachinb716@gmail.com" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <p>© 2026 Sachin Sharma — elementalsouls</p>
+    <p>$ exit 0 <span class="accent">// thanks for visiting</span></p>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passive:true});
+
+document.getElementById('burger').addEventListener('click',()=>{
+  const links=document.querySelector('.nav-links');
+  const open=links.style.display==='flex';
+  Object.assign(links.style,open?{display:''}:{display:'flex',position:'absolute',top:'60px',right:'24px',flexDirection:'column',background:'var(--surface)',border:'1px solid var(--line)',borderRadius:'12px',padding:'16px 22px',gap:'16px'});
+});
+
+const words=['Claude-BugHunter','Claude-OSINT','autonomous agents'];
+const el=document.getElementById('typed');
+let wi=0,ci=0,del=false;
+(function type(){
+  const w=words[wi];
+  el.textContent=w.slice(0,ci);
+  if(!del&&ci<w.length){ci++}
+  else if(!del&&ci===w.length){del=true;setTimeout(type,1400);return}
+  else if(del&&ci>0){ci--}
+  else{del=false;wi=(wi+1)%words.length}
+  setTimeout(type,del?45:85);
+})();
+
+function animate(node){
+  const target=+node.dataset.count, suf=node.dataset.suffix||'', comma=node.dataset.comma;
+  const dur=1400, t0=performance.now();
+  (function step(now){
+    const p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3);
+    let v=Math.round(target*e);
+    node.textContent=(comma?v.toLocaleString():v)+(p===1?suf:'');
+    if(p<1)requestAnimationFrame(step);
+  })(t0);
+}
+
+const io=new IntersectionObserver((es)=>{
+  es.forEach(x=>{
+    if(x.isIntersecting){
+      x.target.classList.add('in');
+      x.target.querySelectorAll?.('[data-count]').forEach(animate);
+      if(x.target.matches('[data-count]'))animate(x.target);
+      io.unobserve(x.target);
+    }
+  });
+},{threshold:.15});
+document.querySelectorAll('.rv').forEach(n=>io.observe(n));
+document.querySelectorAll('.hero-stats').forEach(n=>io.observe(n));
+
+document.querySelectorAll('.proj').forEach(c=>{
+  c.addEventListener('pointermove',e=>{
+    const r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    c.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
+});
+</script>
 </body>
 </html>

@@ -5,7 +5,7 @@ Creator of [Claude-BugHunter](https://github.com/elementalsouls/Claude-BugHunter
 
 ## Stack
 Single self-contained `index.html` — HTML + CSS + vanilla JS, no build step, no dependencies to install.
-Fonts (Syne / Hanken Grotesk / JetBrains Mono) load from Google Fonts; everything else is inline (SVG icons, styles, scripts).
+Fonts (Fraunces / Hanken Grotesk / JetBrains Mono) load from Google Fonts; everything else is inline (SVG icons, styles, scripts).
 
 ## Run locally
 Open `index.html` in a browser. That's it.

@@ -3,11 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sachin Sharma — Offensive Security & AI Automation</title>
-<meta name="description" content="Sachin Sharma — OSCP/CRTO Offensive Security Engineer building LLM-powered autonomous agents for vulnerability discovery. Creator of Claude-BugHunter and Claude-OSINT." />
+<title>Sachin Sharma — Offensive Security &amp; AI Automation</title>
+<meta name="description" content="Sachin Sharma — OSCP/CRTO Offensive Security Engineer building agent-assisted security workflows for reconnaissance, vulnerability discovery, and reporting." />
+<meta property="og:title" content="Sachin Sharma — Offensive Security &amp; AI Automation" />
+<meta property="og:description" content="Offensive Security Engineer and creator of Claude-BugHunter and Claude-OSINT." />
+<meta property="og:url" content="https://elementalsouls.github.io/Portfolio/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="canonical" href="https://elementalsouls.github.io/Portfolio/" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Sachin Sharma","url":"https://elementalsouls.github.io/Portfolio/","jobTitle":"Offensive Security Engineer","sameAs":["https://github.com/elementalsouls","https://www.linkedin.com/in/sachinsharma8080/"],"knowsAbout":["Offensive security","Red teaming","AI security","OSINT","LLM agents"]}
+</script>
+<script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" />
 <style>
 :root{
   --bg:#0a0b0d; --bg-2:#0e1013; --surface:#131519; --surface-2:#171a1f;
@@ -36,6 +46,8 @@ body::after{
   filter:blur(24px);
 }
 a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;position:relative;z-index:1}
 .mono{font-family:var(--mono)}
 .kicker{
@@ -62,7 +74,7 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,11,13,.85
 .nav-links a:hover{color:var(--text)}.nav-links a:hover::after{width:100%}
 .nav-cta{border:1px solid var(--line-2);padding:9px 17px;border-radius:8px;font-size:13px;font-family:var(--mono);transition:all .2s}
 .nav-cta:hover{border-color:var(--accent);color:var(--accent)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:transparent;border:0}
 .burger span{width:22px;height:2px;background:var(--text);transition:.3s}
 
 /* ---------- HERO ---------- */
@@ -88,6 +100,8 @@ header.nav.scrolled{border-bottom-color:var(--line);background:rgba(10,11,13,.85
 .proof span{display:inline-flex;align-items:center;gap:7px}
 .proof svg{width:13px;height:13px;color:var(--accent);flex-shrink:0}
 .proof b{color:var(--text);font-weight:500}
+.audience-paths{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+.audience-paths a{border-bottom:1px solid var(--accent-dim);padding-bottom:2px}.audience-paths a:hover{color:var(--accent)}
 .portrait{position:relative;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,var(--surface),var(--bg-2));box-shadow:0 34px 74px -34px rgba(0,0,0,.85)}
 .portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:grayscale(1) contrast(1.04);display:block}
 .portrait .mono-fallback{position:absolute;inset:0;z-index:0;display:grid;place-items:center;font-family:var(--display);font-weight:500;font-size:96px;color:#2a2e34}
@@ -199,8 +213,17 @@ section.blk{padding:92px 0;position:relative}
 .tag{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:5px 9px;transition:.2s}
 .tag:hover{border-color:var(--accent);color:var(--accent)}
 .certline{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.cert{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;border:1px solid var(--line-2);border-radius:10px;padding:11px 16px;background:var(--surface)}
+.cert-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cert-card{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line-2);border-radius:14px;padding:18px;transition:.25s}
+.cert-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.cert-icon{width:64px;height:64px;object-fit:contain;border-radius:12px;background:var(--bg-2);padding:7px;flex-shrink:0}
+.cert-card h3{font-family:var(--display);font-weight:500;font-size:20px;line-height:1.15;margin-bottom:4px}
+.cert-card p{font-size:12px;color:var(--muted);line-height:1.45}.cert-card .verify{font-family:var(--mono);font-size:11px;color:var(--accent);display:inline-block;margin-top:8px}
+.cert{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12.5px;border:1px solid var(--line-2);border-radius:10px;padding:11px 16px;background:var(--surface);transition:.25s}
+.cert:hover{border-color:var(--accent);transform:translateY(-2px)}
 .cert svg{width:16px;height:16px;color:var(--accent);flex-shrink:0}
+.cert-mark{width:34px;height:34px;border:1px solid rgba(196,236,90,.35);border-radius:8px;display:grid;place-items:center;color:var(--accent);font-family:var(--display);font-size:13px;font-weight:600;flex-shrink:0;background:rgba(196,236,90,.06)}
+.cert-copy{display:flex;flex-direction:column;gap:2px}.cert-copy b{color:var(--text)}.cert-copy span{color:var(--faint);font-size:10.5px}
 .cert b{color:var(--text)}.cert span{color:var(--faint)}
 
 /* ---------- AWARDS ---------- */
@@ -225,20 +248,63 @@ footer{border-top:1px solid var(--line);padding:32px 0}
 .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
 .foot-in p{font-family:var(--mono);font-size:12.5px;color:var(--faint)}
 
-.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.evidence-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.evidence-links a{font-family:var(--mono);font-size:12px;color:var(--muted);text-decoration:underline;text-decoration-color:var(--accent-dim);text-underline-offset:4px;transition:color .2s}
+.evidence-links a:hover{color:var(--accent)}
+.metric-note{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:12px}
+.press-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.press-item{display:flex;flex-direction:column;min-height:230px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:25px;transition:border-color .25s,transform .25s}
+.press-item:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.press-meta{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-dim)}
+.press-item h3{font-family:var(--display);font-weight:500;font-size:21px;line-height:1.25;margin:13px 0 10px}
+.press-item p{color:var(--muted);font-size:14px}
+.press-link{font-family:var(--mono);font-size:12.5px;color:var(--accent);margin-top:auto;padding-top:20px}
+.coverage-note{margin-top:24px;padding:18px 20px;border:1px dashed var(--line-2);border-radius:12px;background:rgba(196,236,90,.035);color:var(--muted);font-size:13.5px;line-height:1.65}
+.coverage-note b{color:var(--text);font-weight:600}
+.coverage-note .mono{font-size:11px;color:var(--accent-dim);letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:7px}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.case-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:25px;position:relative;overflow:hidden}
+.case-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(196,236,90,.06),transparent 48%);pointer-events:none}
+.case-card>*{position:relative}
+.case-label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dim)}
+.case-card h3{font-family:var(--display);font-weight:500;font-size:23px;line-height:1.2;margin:13px 0 10px}
+.case-card p{color:var(--muted);font-size:14px;line-height:1.6}
+.case-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px;padding-top:17px;border-top:1px solid var(--line)}
+.case-meta strong{display:block;font-family:var(--mono);font-size:10px;color:var(--accent-dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+.case-meta span{font-size:13px;color:var(--text)}
+.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.impact-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:25px;position:relative;overflow:hidden}
+.impact-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(196,236,90,.055),transparent 46%);pointer-events:none}
+.impact-card>*{position:relative}.impact-label{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dim)}
+.impact-card h3{font-family:var(--display);font-size:22px;font-weight:500;line-height:1.2;margin:13px 0 10px}.impact-card p{color:var(--muted);font-size:14px;line-height:1.6}.impact-card p b{color:var(--text);font-weight:600}
+.impact-meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.impact-meta strong{display:block;font-family:var(--mono);font-size:10px;color:var(--accent-dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}.impact-meta span{font-size:12.5px;color:var(--text);line-height:1.35;display:block}
+.research-brief{margin-top:58px;border:1px solid var(--line-2);border-radius:15px;padding:28px;background:linear-gradient(135deg,rgba(134,200,232,.07),rgba(196,236,90,.035));}
+.research-brief .brief-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+.research-brief h3{font-family:var(--display);font-size:28px;font-weight:500;line-height:1.15;margin:12px 0 10px}
+.research-brief>p{color:var(--muted);max-width:75ch;font-size:14.5px}
+.tech-artifact{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:26px;padding:18px 20px;border:1px solid var(--line-2);border-radius:12px;background:var(--surface)}
+.tech-artifact h3{font-family:var(--display);font-size:20px;font-weight:500;margin-bottom:4px}.tech-artifact p{color:var(--muted);font-size:13.5px}.tech-artifact a{font-family:var(--mono);font-size:12px;color:var(--accent);white-space:nowrap}
+.brief-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.brief-item{border-top:1px solid var(--line-2);padding-top:13px}.brief-item strong{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dim);margin-bottom:5px}.brief-item span{font-size:13px;color:var(--text);line-height:1.45;display:block}
 
 @media(max-width:900px){
   .hero-grid,.split,.profile-in{grid-template-columns:1fr;gap:38px}
-  .proj-grid,.skill-grid,.aw-grid{grid-template-columns:1fr}
+  .proj-grid,.skill-grid,.aw-grid,.press-grid,.case-grid,.cert-gallery,.impact-grid{grid-template-columns:1fr}
+  .brief-grid{grid-template-columns:1fr 1fr}
+  .tech-artifact{flex-wrap:wrap}
   .nav-links{display:none}.burger{display:flex}
+  .nav-links.open{display:flex;position:absolute;top:60px;right:24px;flex-direction:column;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 22px;gap:16px;box-shadow:0 20px 45px rgba(0,0,0,.45)}
   .hero{padding:140px 0 72px}
 }
 @media(max-width:560px){
   .hero-stats{grid-template-columns:1fr}
   .hstat{border-right:0;border-bottom:1px solid var(--line)}.hstat:last-child{border-bottom:0}
+  .brief-grid{grid-template-columns:1fr}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.js .rv,.js .rv.in{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -246,14 +312,17 @@ footer{border-top:1px solid var(--line);padding:32px 0}
 <header class="nav" id="nav">
   <div class="nav-in">
     <a href="#top" class="brand"><span class="blip"></span>Sachin Sharma</a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="primary-nav" aria-label="Primary navigation">
+      <a href="#impact">Impact</a>
       <a href="#projects">Projects</a>
+      <a href="#coverage">Coverage</a>
       <a href="#research">Research</a>
       <a href="#news">News</a>
       <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
       <a href="#contact" class="nav-cta">Get in touch</a>
     </nav>
-    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    <button class="burger" id="burger" type="button" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -266,36 +335,37 @@ footer{border-top:1px solid var(--line);padding:32px 0}
         <span class="kicker rv">Offensive Security · AI Automation</span>
         <h1 class="rv">Sachin Sharma</h1>
         <p class="subrole rv">Offensive Security Engineer — <span class="accent">Red&nbsp;Team &amp; AI&nbsp;Security Automation</span></p>
-        <p class="lede rv">Six years red-teaming Fortune 500 networks, now building LLM-powered autonomous agents that scale reconnaissance, vulnerability discovery, and reporting. Creator of two open-source AI-security frameworks adopted by red teamers and bug-bounty hunters worldwide.</p>
+        <p class="lede rv">Six years in offensive security, now building agent-assisted workflows that scale reconnaissance, vulnerability discovery, and reporting. Creator of two open-source AI-security frameworks for authorized security research.</p>
         <div class="proof rv">
-          <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.6 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg><b>5,500+</b>&nbsp;GitHub stars</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="7" r="2.5"/><path d="M6 8.5v7M18 9.5c0 3-4 2.5-4 5.5"/></svg><b>830+</b>&nbsp;forks</span>
-          <span>Used by red teamers worldwide</span>
+          <a href="https://github.com/elementalsouls" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.6 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg><b>5,600+</b>&nbsp;combined GitHub stars</a>
+          <a href="https://github.com/elementalsouls" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="7" r="2.5"/><path d="M6 8.5v7M18 9.5c0 3-4 2.5-4 5.5"/></svg><b>940+</b>&nbsp;combined forks</a>
+          <a href="https://www.skills.sh/elementalsouls/claude-bughunter" target="_blank" rel="noopener"><b>5,200+</b>&nbsp;BugHunter skill installs</a>
         </div>
+        <p class="metric-note rv">Public repository and installation metrics, recorded August 10, 2026. Verify live values on the linked sources.</p>
         <div class="hero-cta rv">
-          <a href="#projects" class="btn btn-primary">
+          <a href="#research" class="btn btn-primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
-            View the frameworks
+            View selected work
           </a>
-          <a href="mailto:sachinb716@gmail.com?subject=CV%20request%20%E2%80%94%20via%20portfolio" class="btn btn-ghost">
+          <a href="mailto:sachinb716@gmail.com?subject=Research%20collaboration%20%E2%80%94%20via%20portfolio" class="btn btn-ghost">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
-            Request CV
+            Discuss a role or collaboration
           </a>
         </div>
+        <div class="audience-paths rv"><span>Explore by intent:</span><a href="#experience">Security teams ↗</a><a href="#research">Research collaborators ↗</a></div>
       </div>
       <figure class="portrait rv">
         <div class="mono-fallback">SS</div>
-        <img src="assets/profile.jpg" alt="Sachin Sharma" loading="lazy" onerror="this.remove()" />
+        <img src="assets/profile.jpg" alt="Sachin Sharma" width="800" height="1000" loading="lazy" onerror="this.remove()" />
         <span class="p-badge"><span class="live"></span>elementalsouls</span>
       </figure>
     </div>
 
     <div class="hero-stats rv">
-      <div class="hstat"><div class="n" data-count="6" data-suffix="+">0</div><div class="lab">Years red teaming</div></div>
-      <div class="hstat"><div class="n" data-count="5500" data-suffix="+" data-comma="1">0</div><div class="lab">GitHub stars shipped</div></div>
-      <div class="hstat"><div class="n" data-count="50000" data-suffix="+" data-comma="1">0</div><div class="lab">Exposed creds neutralized</div></div>
+      <div class="hstat"><div class="n" data-count="6" data-suffix="+">6+</div><div class="lab">Years in offensive security</div></div>
+      <div class="hstat"><div class="n" data-count="5600" data-suffix="+" data-comma="1">5,600+</div><div class="lab">Combined GitHub stars · Aug 2026</div></div>
+      <div class="hstat"><div class="n" data-count="940" data-suffix="+" data-comma="1">940+</div><div class="lab">Combined forks · Aug 2026</div></div>
     </div>
-  </div>
 </section>
 
 <!-- PROFILE -->
@@ -313,8 +383,41 @@ footer{border-top:1px solid var(--line);padding:32px 0}
     </div>
     <div>
       <span class="kicker rv">Profile</span>
-      <p class="rv" style="margin-top:18px">I sit at the intersection of <span class="accent">offensive security and applied AI</span> — an OSCP/CRTO red teamer who now designs the LLM agents that automate the work. <span class="soft">Across roles at Grant Thornton and EY I've led red team operations for Fortune 500 clients, cut manual tradecraft by more than half with GenAI-driven workflows, and open-sourced the tooling behind it — now trusted by thousands of security practitioners on GitHub. I bring the same builder's instinct to any team investing in autonomous, AI-driven security.</span></p>
+      <p class="rv" style="margin-top:18px">I sit at the intersection of <span class="accent">offensive security and applied AI</span> — an OSCP/CRTO red teamer who now designs the LLM agents that automate the work. <span class="soft">Across roles at Grant Thornton and EY I've led red team operations for Fortune 500 clients, cut manual tradecraft by more than half with GenAI-driven workflows, and open-sourced the tooling behind it. Claude-BugHunter has recorded 5,200+ installs through skills.sh alongside public GitHub adoption.</span></p>
+      <div class="evidence-links rv"><a href="https://github.com/elementalsouls" target="_blank" rel="noopener">Public repositories ↗</a><a href="#coverage">Independent coverage ↗</a><a href="https://www.linkedin.com/in/sachinsharma8080/" target="_blank" rel="noopener">Professional profile ↗</a></div>
     </div>
+  </div>
+</section>
+
+<!-- SELECTED SECURITY IMPACT -->
+<section class="blk" id="impact">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">01 — Selected security impact</span>
+      <h2>Security work beyond the repositories.</h2>
+      <p>Anonymized examples of the operating problems I solve across red teaming, exposure monitoring, application security, and threat intelligence.</p>
+    </div>
+    <div class="impact-grid">
+      <article class="impact-card rv">
+        <span class="impact-label">Enterprise red teaming</span>
+        <h3>Mapping attack paths across identity, cloud, and endpoint.</h3>
+        <p><b>Role:</b> led internal and external red-team operations for large enterprise clients. Combined attack-path analysis, adversary simulation, and remediation planning to help teams reduce exploitable exposure.</p>
+        <div class="impact-meta"><div><strong>Focus</strong><span>AD · cloud · endpoint</span></div><div><strong>Evidence</strong><span>Anonymized client delivery</span></div></div>
+      </article>
+      <article class="impact-card rv">
+        <span class="impact-label">Exposure monitoring</span>
+        <h3>Turning dark-web noise into an analyst-ready queue.</h3>
+        <p><b>Role:</b> designed an N8N workflow for collection, normalization, prioritization, and escalation of credential-exposure signals. The program surfaced 50,000+ records for triage without publishing sensitive values.</p>
+        <div class="impact-meta"><div><strong>Focus</strong><span>N8N · CTI · triage</span></div><div><strong>Evidence</strong><span>Redacted methodology</span></div></div>
+      </article>
+      <article class="impact-card rv">
+        <span class="impact-label">AppSec + threat intelligence</span>
+        <h3>Finding technical flaws and translating them into decisions.</h3>
+        <p><b>Role:</b> delivered 40+ red-team and application-security engagements across banking, financial services, insurance, healthcare, and energy, pairing technical validation with remediation-focused reporting.</p>
+        <div class="impact-meta"><div><strong>Focus</strong><span>Web · API · CTI</span></div><div><strong>Evidence</strong><span>Engagement history</span></div></div>
+      </article>
+    </div>
+    <p class="metric-note rv">Client names, targets, and sensitive evidence are intentionally withheld. Detailed methodology and references can be discussed in a qualified hiring or research conversation.</p>
   </div>
 </section>
 
@@ -322,31 +425,35 @@ footer{border-top:1px solid var(--line);padding:32px 0}
 <section class="blk" id="projects">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="kicker">01 — Open-source research</span>
+      <span class="kicker">02 — Open-source research</span>
       <h2>AI-security frameworks I build &amp; ship.</h2>
-      <p>Autonomous agent tooling that turns LLM assistants into full recon-to-report operators — adopted globally within months of release.</p>
+      <p>Autonomous agent tooling that turns LLM assistants into structured recon-to-report workflows, with public repositories and external adoption signals.</p>
     </div>
     <div class="proj-grid">
       <article class="proj rv">
         <a class="card-link" href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank" rel="noopener" aria-label="Open Claude-BugHunter on GitHub"></a>
         <div class="proj-top">
           <div class="proj-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l3 3h4v4l3 3-3 3v4h-4l-3 3-3-3H5v-4l-3-3 3-3V5h4z"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.6 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>3,300+</span>
+          <span class="stars"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.6 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>3,400+</span>
         </div>
         <h3>Claude-BugHunter</h3>
         <div class="role-line">Creator &amp; Lead Developer</div>
-        <p class="tagline">An AI agent skill framework that turns LLM coding assistants into autonomous bug-hunting &amp; red-team operators.</p>
+        <p class="tagline">An AI agent skill framework that turns LLM coding assistants into structured bug-hunting &amp; red-team copilots.</p>
         <p class="detail">Its evidence base curates <b>681 disclosed-vulnerability patterns</b> from real HackerOne &amp; Bugcrowd reports, driving a repeatable six-phase recon-to-report workflow that runs across <b>Claude Code, Codex &amp; OpenCode</b>.</p>
         <p class="research-q"><b>Research angle</b>Can LLM agents reliably triage real vulnerability classes end-to-end — where do they succeed, and where do they silently fail?</p>
         <div class="proj-metrics">
           <span class="chip"><b>82</b> security skills</span>
           <span class="chip"><b>15</b> workflow commands</span>
           <span class="chip"><b>24</b> vuln classes</span>
-          <span class="chip"><b>460+</b> forks</span>
+          <span class="chip"><b>520+</b> forks</span>
           <span class="chip">Burp · MCP · ProjectDiscovery</span>
         </div>
         <div class="proj-links">
           <a href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>View source</a>
+        </div>
+        <div class="evidence-links">
+          <a href="https://www.skills.sh/elementalsouls/claude-bughunter" target="_blank" rel="noopener">Independent install record</a>
+          <a href="https://www.claudepluginhub.com/plugins/elementalsouls-claude-bughunter" target="_blank" rel="noopener">Community catalog profile</a>
         </div>
       </article>
 
@@ -358,21 +465,70 @@ footer{border-top:1px solid var(--line);padding:32px 0}
         </div>
         <h3>Claude-OSINT</h3>
         <div class="role-line">Creator &amp; Lead Developer</div>
-        <p class="tagline">A paired AI recon framework — 5,500+ lines of structured tradecraft turning LLMs into external reconnaissance operators.</p>
+        <p class="tagline">An AI reconnaissance framework with eight modular skills and roughly 10,000 lines of structured tradecraft for authorized external-attack-surface research.</p>
         <p class="detail">Automates <b>identity/SSO mapping</b> (Entra, M365, Okta, ADFS), cloud &amp; Kubernetes exposure discovery, and email-security auditing (SPF/DMARC/DKIM) — with sector packs for healthcare, finance, ICS/SCADA &amp; government.</p>
         <p class="research-q"><b>Research angle</b>How far can autonomous agents map an organization's external attack surface from open-source signal alone — and how noisy is that signal?</p>
         <div class="proj-metrics">
-          <span class="chip"><b>90+</b> recon modules</span>
-          <span class="chip"><b>48</b> secret regexes</span>
+          <span class="chip"><b>100+</b> recon capabilities</span>
+          <span class="chip"><b>80</b> secret regexes</span>
           <span class="chip"><b>80+</b> search dorks</span>
           <span class="chip"><b>27</b> attack-path templates</span>
-          <span class="chip"><b>372+</b> forks</span>
+          <span class="chip"><b>420+</b> forks</span>
         </div>
         <div class="proj-links">
           <a href="https://github.com/elementalsouls/Claude-OSINT" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>View source</a>
         </div>
+        <div class="evidence-links">
+          <a href="https://osintnewsletter.com/p/106" target="_blank" rel="noopener">Featured by The OSINT Newsletter</a>
+          <a href="https://www.securityinfo.it/2026/05/08/ecco-il-github-per-fare-di-claude-un-operatore-osint-avanzato/" target="_blank" rel="noopener">SecurityInfo.it feature</a>
+        </div>
       </article>
     </div>
+    <div class="tech-artifact rv"><div><h3>Start with the technical walkthrough.</h3><p>Read the architecture, skill catalog, and evaluation material before treating either project as a black box.</p></div><a href="https://elementalsouls.github.io/Claude-BugHunter/" target="_blank" rel="noopener">BugHunter architecture ↗</a><a href="https://github.com/elementalsouls/Claude-OSINT/tree/main/docs" target="_blank" rel="noopener">OSINT docs ↗</a></div>
+  </div>
+</section>
+
+<!-- INDEPENDENT COVERAGE -->
+<section class="blk" id="coverage">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">03 — Independent coverage</span>
+      <h2>Projects in the field.</h2>
+      <p>Selected third-party articles, directories, and specialist newsletters that mention or analyze Claude-BugHunter and Claude-OSINT. Coverage is labeled by source type so the evidence stays easy to audit.</p>
+    </div>
+    <div class="press-grid">
+      <a class="press-item rv" href="https://www.securityinfo.it/2026/05/08/ecco-il-github-per-fare-di-claude-un-operatore-osint-avanzato/" target="_blank" rel="noopener">
+        <span class="press-meta">SecurityInfo.it · May 8, 2026</span>
+        <h3>Using Claude as an advanced OSINT operator</h3>
+        <p>An editorial analysis of Claude-OSINT’s skill-based architecture, investigative workflows, practical value, and responsible-use boundaries.</p>
+        <span class="press-link">Read article ↗</span>
+      </a>
+      <a class="press-item rv" href="https://osintnewsletter.com/p/106" target="_blank" rel="noopener">
+        <span class="press-meta">The OSINT Newsletter · May 14, 2026</span>
+        <h3>Claude-OSINT featured in Issue #106</h3>
+        <p>The specialist newsletter selected Claude-OSINT for its tools section and described it as a framework for structured investigative workflows.</p>
+        <span class="press-link">Read issue ↗</span>
+      </a>
+      <a class="press-item rv" href="https://techloghub.com/open-source/claude-bughunter" target="_blank" rel="noopener">
+        <span class="press-meta">TechLogHub · 2026</span>
+        <h3>A deep dive into Claude-BugHunter</h3>
+        <p>A long-form overview of the framework’s six-phase workflow, vulnerability-class coverage, validation gates, reporting discipline, and authorized-use posture.</p>
+        <span class="press-link">Read article ↗</span>
+      </a>
+      <a class="press-item rv" href="https://toolhunter.cc/tools/claude-osint" target="_blank" rel="noopener">
+        <span class="press-meta">ToolHunter · Apr 27, 2026</span>
+        <h3>Claude-OSINT compared with classic OSINT tools</h3>
+        <p>A directory analysis that positions Claude-OSINT as a Claude-native methodology layer, and notes the boundary between structured guidance and a full scanner.</p>
+        <span class="press-link">Read analysis ↗</span>
+      </a>
+      <a class="press-item rv" href="https://www.opensourceprojects.dev/post/6754ac5c-306b-44be-a77e-e0b8585ad79e" target="_blank" rel="noopener">
+        <span class="press-meta">OpenSourceProjects.dev · May 25, 2026</span>
+        <h3>Claude-BugHunter project overview</h3>
+        <p>A community project listing that explains the skill-and-command model, disclosed-report corpus, and intended bug-bounty and red-team use cases.</p>
+        <span class="press-link">Read listing ↗</span>
+      </a>
+    </div>
+    <div class="coverage-note rv"><span class="mono">Research note · verified Aug 10, 2026</span><b>What the sources consistently support:</b> Claude-BugHunter is a Claude Code skill bundle with a six-phase scope → recon → hunt → validate → capture → report workflow; Claude-OSINT is a Claude Skills library that combines methodology with tactical recon assets. Neither is presented as a standalone scanner, and both repositories explicitly frame use around authorized testing. Counts and repository metrics are time-sensitive; the project cards link back to the primary repositories for live values.</div>
   </div>
 </section>
 
@@ -382,7 +538,7 @@ footer{border-top:1px solid var(--line);padding:32px 0}
     <div class="split">
       <div>
         <div class="sec-head rv" style="margin-bottom:26px">
-          <span class="kicker">02 — Where I'm headed</span>
+          <span class="kicker">04 — Where I'm headed</span>
           <h2>Research interests.</h2>
           <p>I want to study the systems I've been building by instinct: how autonomous offensive agents actually behave, where they break, and how to make them measurable and safe. Four threads I'd bring to a lab:</p>
         </div>
@@ -394,7 +550,7 @@ footer{border-top:1px solid var(--line);padding:32px 0}
       </div>
       <div>
         <div class="sec-head rv" style="margin-bottom:30px">
-          <span class="kicker">03 — Track record</span>
+          <span class="kicker">05 — Track record</span>
           <h2 id="experience">Experience.</h2>
         </div>
         <div class="tl">
@@ -403,11 +559,11 @@ footer{border-top:1px solid var(--line);padding:32px 0}
             <div class="tl-role">Assistant Manager — Red Team &amp; Offensive Security</div>
             <div class="tl-co">Grant Thornton LLP · Gurgaon, India</div>
             <ul>
-              <li>Led internal &amp; external red team operations for Fortune 500 clients, mapping critical attack paths across Active Directory, cloud &amp; endpoint — <b>reducing exploitable attack surface ~50%</b>.</li>
+              <li>Led internal &amp; external red team operations for Fortune 500 clients, mapping critical attack paths across Active Directory, cloud &amp; endpoint — <b>helping reduce exploitable attack surface by ~50% in measured programs</b>.</li>
               <li>Pioneered GenAI-driven offensive workflows — LLM automation and custom AI skills into recon, reporting &amp; dark-web monitoring — <b>cutting manual tradecraft 50–60%</b>.</li>
-              <li>Automated a dark-web monitoring program with N8N that surfaced <b>50,000+ exposed credentials</b> before exploitation.</li>
+              <li>Automated a dark-web monitoring program with N8N that surfaced <b>50,000+ credential records for triage</b> before confirmed exploitation.</li>
               <li>Engineered custom Windows tooling &amp; PowerShell automation; ran phishing simulations that lifted employee reporting by 90%.</li>
-              <li>Simulated APT scenarios mapped to MITRE ATT&amp;CK; sustained a 95% client satisfaction rate.</li>
+              <li>Simulated APT scenarios mapped to MITRE ATT&amp;CK while contributing to a reported <b>95% client satisfaction rate</b>.</li>
             </ul>
           </div>
           <div class="tl-item rv">
@@ -415,7 +571,7 @@ footer{border-top:1px solid var(--line);padding:32px 0}
             <div class="tl-role">Associate Consultant — Cyber Threat &amp; Vulnerability Mgmt</div>
             <div class="tl-co">Ernst &amp; Young (EY) LLP · Mumbai, India</div>
             <ul>
-              <li>Executed <b>15+ red team &amp; 40+ application-security engagements</b> across BFSI, healthcare &amp; energy verticals, uncovering critical and zero-day flaws.</li>
+              <li>Executed <b>40+ red-team and application-security engagements</b> across banking, financial services, insurance, healthcare, and energy, uncovering critical and previously undocumented flaws.</li>
               <li>Delivered Cyber Threat Intelligence reports that cut mean incident-response time by 25%.</li>
               <li>Led web app &amp; Active Directory pentests — lateral movement, privilege escalation, auth flaws — and reviewed firewall/network configs against ISO 27001 &amp; CIS.</li>
             </ul>
@@ -432,6 +588,18 @@ footer{border-top:1px solid var(--line);padding:32px 0}
         </div>
       </div>
     </div>
+    <article class="research-brief rv" id="research-brief">
+      <span class="brief-kicker">Research brief · proposed study</span>
+      <h3>Measuring whether structured skills improve agentic recon reliability.</h3>
+      <p>A reproducible evaluation I can run on controlled, authorized lab targets: compare a baseline LLM workflow with skill-assisted and human-in-the-loop conditions, then measure whether structure improves valid findings without increasing scope drift or unsupported claims.</p>
+      <div class="brief-grid">
+        <div class="brief-item"><strong>Question</strong><span>Does structured methodology improve precision, recall, and evidence quality?</span></div>
+        <div class="brief-item"><strong>Conditions</strong><span>Baseline model · skill-assisted agent · human-in-the-loop workflow</span></div>
+        <div class="brief-item"><strong>Measures</strong><span>Time to valid finding · triage precision · reproducibility · scope violations</span></div>
+        <div class="brief-item"><strong>Output</strong><span>Public protocol, result matrix, failure taxonomy, and reproducible examples</span></div>
+      </div>
+      <div class="evidence-links"><a href="https://elementalsouls.github.io/Claude-BugHunter/" target="_blank" rel="noopener">BugHunter methodology ↗</a><a href="https://github.com/elementalsouls/Claude-OSINT/tree/main/tests" target="_blank" rel="noopener">OSINT evaluation tests ↗</a></div>
+    </article>
   </div>
 </section>
 
@@ -439,14 +607,14 @@ footer{border-top:1px solid var(--line);padding:32px 0}
 <section class="blk" id="news">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="kicker">04 — Recent activity</span>
+      <span class="kicker">06 — Recent activity</span>
       <h2>News.</h2>
     </div>
     <div class="news-list rv">
+      <div class="news-item"><span class="yr">Aug 2026</span><p><b>Claude-BugHunter and Claude-OSINT passed 5,600 combined GitHub stars and 940 combined forks.</b> Metrics recorded August 10, 2026. <a href="https://github.com/elementalsouls" target="_blank" rel="noopener">View the repositories</a>.</p></div>
       <div class="news-item"><span class="yr">2026</span><p>Seeking a <b>Graduate Research Assistantship for Fall 2027</b> — reaching out to research groups working on autonomous AI security and adversarial ML.</p></div>
-      <div class="news-item"><span class="yr">2025</span><p><b>Claude-BugHunter crossed 3,300★</b> and Claude-OSINT 2,200★ — combined 5,500+ stars and 830+ forks from the security community.</p></div>
+      <div class="news-item"><span class="yr">May 2026</span><p><b>Claude-OSINT received independent coverage</b> from SecurityInfo.it and The OSINT Newsletter. <a href="#coverage">See the coverage</a>.</p></div>
       <div class="news-item"><span class="yr">2025</span><p>Awarded a <b>Spot Award at Grant Thornton</b> for AI-powered offensive tooling and the N8N dark-web monitoring program.</p></div>
-      <div class="news-item"><span class="yr">2024</span><p>Released <b>Claude-BugHunter &amp; Claude-OSINT</b> — open-source AI-security frameworks now adopted by red teamers and bug-bounty hunters worldwide.</p></div>
     </div>
   </div>
 </section>
@@ -455,7 +623,7 @@ footer{border-top:1px solid var(--line);padding:32px 0}
 <section class="blk" id="skills">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="kicker">05 — Toolkit</span>
+      <span class="kicker">07 — Toolkit</span>
       <h2>Skills &amp; expertise.</h2>
       <p>From LLM agent engineering to Active Directory attack paths.</p>
     </div>
@@ -486,11 +654,29 @@ footer{border-top:1px solid var(--line);padding:32px 0}
       </div>
     </div>
 
-    <div class="certline rv">
-      <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg><b>OSCP</b><span>Offensive Security Certified Professional</span></div>
-      <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg><b>CRTO</b><span>Certified Red Team Operator</span></div>
-      <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg><b>HTB · TCM</b><span>Rasta Labs · Pivoting · Windows PrivEsc</span></div>
-      <div class="cert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V5l8-3 8 3v14M4 19h16M4 19l8-3 8 3"/></svg><b>B.Tech, IT</b><span>ABES Engineering College · 2020</span></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="blk" id="certifications">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">08 — Certifications</span>
+      <h2>Credentials you can verify.</h2>
+    </div>
+    <div class="cert-gallery">
+      <a class="cert-card rv" href="https://www.credential.net/816424fa-c185-44a9-b8df-790786abd0c6#acc.UBY2LAaO" target="_blank" rel="noopener">
+        <img class="cert-icon" src="assets/oscp-badge.webp" alt="OSCP certification badge" width="64" height="64" loading="lazy" />
+        <div><h3>OSCP</h3><p>Offensive Security Certified Professional</p><span class="verify">Verify credential ↗</span></div>
+      </a>
+      <a class="cert-card rv" href="https://badges.parchment.eu/public/assertions/aR-JqN6jQ--VO9EWiljKQQ" target="_blank" rel="noopener">
+        <img class="cert-icon" src="assets/crto-badge.png" alt="CRTO certification badge" width="64" height="64" loading="lazy" />
+        <div><h3>CRTO</h3><p>Certified Red Team Operator</p><span class="verify">Verify credential ↗</span></div>
+      </a>
+      <a class="cert-card rv" href="https://www.hackthebox.com/certificates" target="_blank" rel="noopener">
+        <img class="cert-icon" src="assets/htb-icon.png" alt="Hack The Box issuer icon" width="64" height="64" loading="lazy" />
+        <div><h3>HTB · Rasta Labs</h3><p>Certificate ID: HTBCERT-6E35E4E482</p><span class="verify">Validate with HTB ↗</span></div>
+      </a>
     </div>
   </div>
 </section>
@@ -499,13 +685,13 @@ footer{border-top:1px solid var(--line);padding:32px 0}
 <section class="blk">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="kicker">06 — Recognition</span>
+      <span class="kicker">09 — Recognition</span>
       <h2>Awards.</h2>
     </div>
     <div class="aw-grid">
       <div class="aw rv"><div class="yr">2024 &amp; 2025</div><h3>Spot Award</h3><p>Grant Thornton — for driving AI-powered tooling &amp; N8N dark-web monitoring initiatives and sustained client success.</p></div>
       <div class="aw rv"><div class="yr">2022 &amp; 2023</div><h3>"I am Exceptional"</h3><p>Ernst &amp; Young — for delivering high-impact red team projects across multiple Fortune 500 clients.</p></div>
-      <div class="aw rv"><div class="yr">Ongoing</div><h3>5,500+ GitHub Stars</h3><p>Community adoption of Claude-BugHunter &amp; Claude-OSINT by red teamers and bug-bounty hunters worldwide.</p></div>
+      <div class="aw rv"><div class="yr">Aug 2026</div><h3>Open-source traction</h3><p>5,600+ combined GitHub stars, 940+ forks, and independent coverage across specialist security and OSINT publications.</p></div>
     </div>
   </div>
 </section>
@@ -513,7 +699,7 @@ footer{border-top:1px solid var(--line);padding:32px 0}
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
-    <span class="kicker rv" style="justify-content:center">07 — Let's talk</span>
+    <span class="kicker rv" style="justify-content:center">10 — Let's talk</span>
     <h2 class="rv">Building at the AI × security edge?</h2>
     <p class="rv">Open to senior offensive-security roles, research collaborations, and graduate research assistantships — and always up for a conversation about autonomous red teaming.</p>
     <div class="contact-actions rv">
@@ -521,15 +707,15 @@ footer{border-top:1px solid var(--line);padding:32px 0}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
         sachinb716@gmail.com
       </a>
-      <a href="Sachin_Sharma_CV.pdf" target="_blank" class="btn btn-ghost">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
-        Download CV
+      <a href="mailto:sachinb716@gmail.com?subject=CV%20request%20%E2%80%94%20via%20portfolio" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+        Request CV
       </a>
     </div>
     <div class="socials rv">
-      <a class="soc" href="https://github.com/elementalsouls" target="_blank" rel="noopener" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
-      <a class="soc" href="https://www.linkedin.com/in/sachinsharma8080/" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.25 8h4.5v12.5H.25zM8 8h4.3v1.7h.06c.6-1.1 2-2.3 4.14-2.3 4.4 0 5.25 2.9 5.25 6.7v6.4h-4.5v-5.7c0-1.36-.02-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.8H8z"/></svg></a>
-      <a class="soc" href="mailto:sachinb716@gmail.com" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></a>
+      <a class="soc" href="https://github.com/elementalsouls" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub profile"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
+      <a class="soc" href="https://www.linkedin.com/in/sachinsharma8080/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn profile"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.25 8h4.5v12.5H.25zM8 8h4.3v1.7h.06c.6-1.1 2-2.3 4.14-2.3 4.4 0 5.25 2.9 5.25 6.7v6.4h-4.5v-5.7c0-1.36-.02-3.1-1.9-3.1s-2.2 1.5-2.2 3v5.8H8z"/></svg></a>
+      <a class="soc" href="mailto:sachinb716@gmail.com" title="Email" aria-label="Email Sachin Sharma"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></a>
     </div>
   </div>
 </section>
@@ -547,11 +733,22 @@ addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20),{passi
 
 document.getElementById('burger').addEventListener('click',()=>{
   const links=document.querySelector('.nav-links');
-  const open=links.style.display==='flex';
-  Object.assign(links.style,open?{display:''}:{display:'flex',position:'absolute',top:'60px',right:'24px',flexDirection:'column',background:'var(--surface)',border:'1px solid var(--line)',borderRadius:'12px',padding:'16px 22px',gap:'16px'});
+  const open=links.classList.toggle('open');
+  document.getElementById('burger').setAttribute('aria-expanded',String(open));
+});
+document.querySelectorAll('.nav-links a').forEach(link=>link.addEventListener('click',()=>{
+  document.querySelector('.nav-links').classList.remove('open');
+  document.getElementById('burger').setAttribute('aria-expanded','false');
+}));
+addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelector('.nav-links').classList.remove('open');
+    document.getElementById('burger').setAttribute('aria-expanded','false');
+    document.getElementById('burger').focus();
+  }
 });
 
-const words=['Claude-BugHunter','Claude-OSINT','autonomous agents'];
+const words=['Claude-BugHunter','Claude-OSINT','agent-assisted workflows'];
 const el=document.getElementById('typed');
 let wi=0,ci=0,del=false;
 (function type(){
@@ -569,6 +766,7 @@ function animate(node){
   const dur=1400, t0=performance.now();
   (function step(now){
     const p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3);
+    if(p===0){requestAnimationFrame(step);return}
     let v=Math.round(target*e);
     node.textContent=(comma?v.toLocaleString():v)+(p===1?suf:'');
     if(p<1)requestAnimationFrame(step);
